@@ -6,6 +6,8 @@ This fiery fusion recipe brings together the hearty intensity of **South African
 
 This is comfort food with an edge — rich livers, zesty slaw, creamy avocado, and warm corn tortillas, all wrapped up into an emotional bite. It might make Miku sweat, and Gombocom absolutely won't touch it (too spicy!) — but Kugli Head would keep leftovers safe for later.
 
+![peri-peri-livers-de-la-kukli](../images/illustrations/peri-peri-livers-de-la-kukli.png)
+
 ## Portions
 Serves: 2–3 Kumplis
 
