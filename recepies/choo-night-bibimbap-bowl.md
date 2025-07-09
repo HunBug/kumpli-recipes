@@ -32,7 +32,7 @@ Ingredient Count: 20 ingredients
 Storage: keeps 2 days in fridge (reheat gently)
 Reheating: pan or microwave, add a splash of water
 Pairing: serve with miso soup, cold barley tea, or pickled daikon
-Tags: soul-warming, choo-series, gombocom-approved, rainy-faraway-moon, ciraf-approved, miku-mood, kugli-storage
+Tags: soul-warming, choo-series, gombocom-approved, rainy-faraway-moon, ciraf-approved, miku-mood, kugli-storage, gerzemice-friendly
 
 ## Ingredients
 
