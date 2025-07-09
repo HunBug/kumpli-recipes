@@ -102,7 +102,7 @@ Best enjoyed on the couch with a Choo series, fuzzy socks, and Pupi the cat asle
 
 ## 🍚 Maa’s Cozy Bibimbap and Miso
 
-![Cozy Bibimbap](../images/illustrations/choo-night-bibimbap-bowl-p1.png)
+![Cozy Bibimbap](../photos/illustrations/choo-night-bibimbap-bowl-p1.png)
 
 *Maa prepared the original version. The soft setup with forest placemat and sesame-dusted toppings is exactly how she loves it.*
 
@@ -110,7 +110,7 @@ Best enjoyed on the couch with a Choo series, fuzzy socks, and Pupi the cat asle
 
 ## 🍳 Boo’s Gerzemice Bowl?
 
-![Boo’s Gerzemice Bowl](../images/illustrations/choo-night-bibimbap-bowl-p2.png)
+![Boo’s Gerzemice Bowl](../photos/illustrations/choo-night-bibimbap-bowl-p2.png)
 
 *Bibimbap à la Boo — with sausage and invention. A framed tribute to playful remixing.*
 
