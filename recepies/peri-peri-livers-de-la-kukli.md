@@ -68,3 +68,26 @@ Tags: comfort-food, spicy, bold, quick, soul-warming, miku-might-cry
 ## Kumpli Notes
 
 This recipe should be eaten with your sleeves rolled up and your heart open. Best shared over a cooking night with laughter and music, and maybe a plush or two watching from the shelf. Kugli Head is excellent at storing leftovers, if you manage to save any.
+
+## 🖼️ Cooking Moments
+
+![Close-up of the taco filling](../images/illustrations/peri-peri-livers-de-la-kukli-p1.png)
+
+*The heart of the taco – spicy, tender, and made with love.*
+
+---
+
+## 🍽️ The Kumpli Way
+
+![Maa tasting the taco](../images/illustrations/peri-peri-livers-de-la-kukli-p2.png)
+
+*Maa enjoying the very first bite – eyes closed, fully present. A recipe worth remembering.*
+
+---
+
+## 🍳 What's in the Pan?
+
+![Cooking ingredients](../images/illustrations/peri-peri-livers-de-la-kukli-p3.png)
+
+*The rich peri-peri liver, fresh cabbage slaw, and warm tortillas – everything ready to build joy.*
+
