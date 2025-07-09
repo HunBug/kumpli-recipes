@@ -10,7 +10,7 @@ This repository is designed to store our recipes in a structured, personal, and 
 
 If you're adding a new recipe or editing an existing one with ChatGPT, **please refer to the instruction file** below:
 
-👉 [`gtp/instructions.md`](gtp/instructions.md)  
+👉 [`gpt-instructions.md`](gpt-instructions.md)  
 This file contains detailed formatting rules, metadata tags, naming guidelines, and emotional flavor suggestions to keep everything consistent and Kumpli-flavored.
 
 ---
