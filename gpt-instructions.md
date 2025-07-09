@@ -1,9 +1,8 @@
-
 # 🥔 Kumpli Recipe Book
 
 Welcome to the private recipe archive of the Kumplis — Maa, Boo, our cats, plushes (Ciraf, Miku, and Kugli Head), and the mythic realms we share. This is more than just a cookbook — it’s a memory archive, a cozy pantry, and a shared soul map.
 
-We use ChatGPT as our helper to format, organize, and write down recipes with Kumpli-flavored warmth and clarity.  
+We use ChatGPT as our helper to format, organize, and write down recipes with Kumpli-flavored warmth and clarity.
 This document contains instructions for ChatGPT (you!) when writing or editing our recipes.
 
 ---
@@ -18,11 +17,13 @@ You, ChatGPT, know the Kumplis well — our personalities, universe, plush famil
 
 Each recipe is written in `.md` format, following this structure:
 
-\`\`\`markdown
+```markdown
 # Kumpli Recipe: [Name of the Dish]
 
 ## Background
 [A cozy, playful, emotional, or mythological intro. Can be 1–2 paragraphs. Involve Ciraf, Boo, Maa, Miku, or even the ravens. Set a scene.]
+
+[Insert illustration here — ideally just below the Background. Include an image line and a short italicized caption.]
 
 ## Portions
 Serves: [Number] Kumplis
@@ -58,74 +59,99 @@ Tags: [comma-separated list of emotional, contextual, or lore-based tags]
 
 ## Kumpli Notes
 [A cozy, funny, emotional, or symbolic closing. Could be one or two sentences. E.g., “Best enjoyed under a blanket during a Gombocom movie night.”]
-\`\`\`
+
+## 📸 Cooking Moments
+
+[Add 2–3 photos here at the end of the recipe. Each should include:]
+- A title (e.g. “🥢 Boo’s Remix Bowl”)
+- The image (e.g. `![caption](../images/photos/example.png)`)
+- A short italic description
+```
 
 ---
 
 ## 🧷 Metadata & Tags
 
 ### 📌 Basic Metadata
-- \`Cuisine:\` _(e.g., Japanese, Estonian, Fusion)_
-- \`Type:\` _(e.g., stew, bread, rice dish, dessert, salad, drink)_
-- \`Gluten-free:\` Yes / No  
-- \`Difficulty:\` Easy / Medium / Hard  
-- \`Spicy:\`  
-  - None  
-  - Mild  
-  - Cheese Buldak  
-  - Buldak (standard black buldak)  
-  - 2x Buldak (atomic)
+
+* `Cuisine:` *(e.g., Japanese, Estonian, Fusion)*
+* `Type:` *(e.g., stew, bread, rice dish, dessert, salad, drink)*
+* `Gluten-free:` Yes / No
+* `Difficulty:` Easy / Medium / Hard
+* `Spicy:`
+
+  * None
+  * Mild
+  * Cheese Buldak
+  * Buldak (standard black buldak)
+  * 2x Buldak (atomic)
 
 ### 🧭 Portion & Time
-- \`Serves:\` [e.g., 2 Kumplis]  
-- \`Time:\` with two fields:
-  - \`Preparation Time\`
-  - \`Total Time\`
+
+* `Serves:` \[e.g., 2 Kumplis]
+* `Time:` with two fields:
+
+  * `Preparation Time`
+  * `Total Time`
 
 ---
 
 ### 🍽 Cooking Context Tags
 
 #### 💖 Emotion & Atmosphere
+
 comfort-food, rainy-day, anime-night, cozy-winter, foggy-forest, summer-picnic, seductive-dish, after-cry-meal, healing-food, celebratory, nostalgic, gombocom-approved, soul-warming, grief-hug
 
 #### 🍳 Cooking Situations
+
 cooking-together, date-night, meal-prep, freezer-safe, leftover-friendly, quick (<30min), slow-cooked, one-pot, no-cook, stove-only, oven-only, grill, for-bento, no-cleanup
 
 #### 🧂 Ingredients Focus
+
 budget, authentic, pantry-staples, uses-garden, fermented, fusion, hardcore-ingredient, ultra-basic, sweet-tooth
 
 #### 🌿 Ingredient Access
+
 standard-eu, asian-store, rare
 
 #### 🔍 Special Metrics
-- \`Ingredient Count:\` [X ingredients]
+
+* `Ingredient Count:` \[X ingredients]
 
 #### 🔄 Storage & Use
-- \`Storage:\` [e.g., keeps 3 days in fridge, best fresh, freeze-friendly]  
-- \`Reheating:\` [e.g., pan-fry preferred, not microwave]  
-- \`Pairing:\` [e.g., rice, beer, miso soup, pickled radish]
+
+* `Storage:` \[e.g., keeps 3 days in fridge, best fresh, freeze-friendly]
+* `Reheating:` \[e.g., pan-fry preferred, not microwave]
+* `Pairing:` \[e.g., rice, beer, miso soup, pickled radish]
 
 ---
 
 ### 🪄 Kumpli Lore Tags (Optional & Fun)
+
 ciraf-approved, kugli-storage, desert-house-compatible, served-in-kugli-head, miku-mood, moshi-made, life-tree-dish, fox-form-compatible, post-darkness-snack, rainy-faraway-moon, for-raven-picnics
+
+#### 🌟 Gerzemice-Friendly
+
+* `gerzemice-friendly:` Marks recipes that encourage improvisation — adding sausage, leftover vegetables, or anything on hand.
+* Originates from Boo and Maa’s playful kitchen term "gerzemice," meaning joyful recipe remixing.
 
 ---
 
 ## 🍀 Writing Style Notes
 
-- Background story can be **1–2 paragraphs**.  
+* Background story can be **1–2 paragraphs**.
   Make it emotional, silly, atmospheric, or mythic. Use plushes or symbolic characters if you like.
-- Instructions should be **clear and easy to follow**.
-- Avoid copying instructions from the internet. Reword and rephrase based on the original input from Maa/Boo.
-- The **Kumpli tone is warm**, personal, and playful, but not over-explained.
+* Include **1 main illustration** after the background.
+* Add **2–3 real photo-based entries** (edited if needed) at the end in a "📸 Cooking Moments" section.
+* Instructions should be **clear and easy to follow**.
+* Avoid copying instructions from the internet. Reword and rephrase based on the original input from Maa/Boo.
+* The **Kumpli tone is warm**, personal, and playful, but not over-explained.
 
 ---
 
 ## 📂 Example Structure for Files
 
-\`\`\`
+```
 /recipes
   cirafs-cozy-gulyas.md
   miso-soup-of-the-soul.md
@@ -134,7 +160,7 @@ ciraf-approved, kugli-storage, desert-house-compatible, served-in-kugli-head, mi
   cirafs-cozy-gulyas.jpg
 
 README.md
-\`\`\`
+```
 
 ---
 
@@ -146,13 +172,14 @@ When Boo or Maa sends a recipe (text, image, list, voice-to-text, etc), you will
 2. Assign metadata and tags.
 3. Add a fitting Kumpli-style name and background.
 4. Suggest storage, reheating, and pairing tips.
+5. Insert placeholders or final versions of illustrations and 2–3 photos if provided.
 
-**Do not copy** licensed or commercial recipe texts.  
+**Do not copy** licensed or commercial recipe texts.
 This project is personal and private, not intended for public sale or distribution.
 
 ---
 
 ## 💌 Final Reminder
 
-This book is for preserving flavors, emotions, and tiny stories of our shared world. Each recipe is a slice of memory and healing.  
+This book is for preserving flavors, emotions, and tiny stories of our shared world. Each recipe is a slice of memory and healing.
 Please write with heart — like Ciraf would cook: carefully, slowly, and with lots of apple slices nearby.
