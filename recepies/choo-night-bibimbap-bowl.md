@@ -18,21 +18,20 @@ Serves: 2 Kumplis
 * Total Time: 35–40 minutes
 
 ## Tags & Metadata
-
-Cuisine: Korean
-Type: rice dish
-Gluten-free: No
-Difficulty: Medium
-Spicy: Buldak
-Serves: 2 Kumplis
-Good for: cozy-night, cooking-together, comfort-food, anime-night
-Seasonality: anytime
-Ingredient Access: asian-store
-Ingredient Count: 20 ingredients
-Storage: keeps 2 days in fridge (reheat gently)
-Reheating: pan or microwave, add a splash of water
-Pairing: serve with miso soup, cold barley tea, or pickled daikon
-Tags: soul-warming, choo-series, gombocom-approved, rainy-faraway-moon, ciraf-approved, miku-mood, kugli-storage, gerzemice-friendly
+Cuisine: Korean  
+Type: rice dish  
+Gluten-free: No  
+Difficulty: Medium  
+Spicy: Buldak  
+Serves: 2 Kumplis  
+Good for: cozy-night, cooking-together, comfort-food, anime-night  
+Seasonality: anytime  
+Ingredient Access: asian-store  
+Ingredient Count: 20 ingredients  
+Storage: keeps 2 days in fridge (reheat gently)  
+Reheating: pan or microwave, add a splash of water  
+Pairing: serve with miso soup, cold barley tea, or pickled daikon  
+Tags: soul-warming, choo-series, gombocom-approved, rainy-faraway-moon, ciraf-approved, miku-mood, kugli-storage, gerzemice-friendly  
 
 ## Ingredients
 
