@@ -71,7 +71,7 @@ This recipe should be eaten with your sleeves rolled up and your heart open. Bes
 
 ## 🖼️ Cooking Moments
 
-![Close-up of the taco filling](../images/illustrations/peri-peri-livers-de-la-kukli-p1.png)
+![Close-up of the taco filling](../images/photos/peri-peri-livers-de-la-kukli-p1.png)
 
 *The heart of the taco – spicy, tender, and made with love.*
 
@@ -79,7 +79,7 @@ This recipe should be eaten with your sleeves rolled up and your heart open. Bes
 
 ## 🍽️ The Kumpli Way
 
-![Maa tasting the taco](../images/illustrations/peri-peri-livers-de-la-kukli-p2.png)
+![Maa tasting the taco](../images/photos/peri-peri-livers-de-la-kukli-p2.png)
 
 *Maa enjoying the very first bite – eyes closed, fully present. A recipe worth remembering.*
 
@@ -87,7 +87,7 @@ This recipe should be eaten with your sleeves rolled up and your heart open. Bes
 
 ## 🍳 What's in the Pan?
 
-![Cooking ingredients](../images/illustrations/peri-peri-livers-de-la-kukli-p3.png)
+![Cooking ingredients](../images/photos/peri-peri-livers-de-la-kukli-p3.png)
 
 *The rich peri-peri liver, fresh cabbage slaw, and warm tortillas – everything ready to build joy.*
 
