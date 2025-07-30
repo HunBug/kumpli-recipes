@@ -8,7 +8,7 @@ This is not cuisine. This is **survival art**. It is Maa’s firebird sadness so
 
 And when bravery (or sorrow) peaks, Maa once summoned the 3x Buldak. The forest shook. The ravens watched. Boo still speaks of that day with reverence and terror.
 
-![The Ancient Lazy Feast Begins](../images/illustrations/emergency_feast_of_eternal_laziness.md.png)
+![The Ancient Lazy Feast Begins](../images/illustrations/emergency_feast_of_eternal_laziness.png)
 *No knife, no pan, no soul left. Just heat and chew.*
 
 ## Portions
@@ -62,14 +62,3 @@ Best eaten in mismatched socks while wrapped in a blanket. Ideal beverage: anyth
 
 ## 📸 Cooking Moments
 
-### 🐔 Buldak Rage Summoning
-![Buldak Summon](../images/photos/buldak-blast.png)
-*Maa, steam in her eyes. Boo, hiding behind the table.*
-
-### 🍕 Pizza of No Effort
-![Hotdog Pizza](../images/photos/ranna-rootsi-lazy.png)
-*Still frozen on one side? Who cares.*
-
-### 🐟 Fish Finger Shrine
-![Fish Shrine](../images/photos/fish-finger-shrine.png)
-*Ten golden fishsticks in sacred silence.*
