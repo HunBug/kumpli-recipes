@@ -123,8 +123,7 @@ jobs:
           git rm -r --quiet recipes || true
           mkdir -p recipes
           cp -r ../dist/* recipes/
-          # Avoid Jekyll processing
-          touch .nojekyll
+
           git add -A
           if git diff --cached --quiet; then
             echo "No changes to deploy."
