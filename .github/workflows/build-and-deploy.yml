@@ -107,20 +107,23 @@ jobs:
           echo "Publishing to branch: ${BRANCH}"
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git clone --depth 1 https://${DEPLOY_TOKEN}@github.com/${EXTERNAL_REPOSITORY}.git pages
+          # Clone full history to ensure branch refs are available
+          git clone https://${DEPLOY_TOKEN}@github.com/${EXTERNAL_REPOSITORY}.git pages
           cd pages
-          # Ensure target branch exists and checkout
-          if git ls-remote --exit-code --heads origin "$BRANCH" >/dev/null 2>&1; then
-            git fetch origin "$BRANCH" --depth 1
-            git checkout -B "$BRANCH" "origin/$BRANCH"
+          # Fetch the target branch explicitly
+          git fetch origin "${BRANCH}" --prune || true
+          if git show-ref --verify --quiet "refs/remotes/origin/${BRANCH}"; then
+            git checkout -B "${BRANCH}" "origin/${BRANCH}"
           else
-            git checkout -B "$BRANCH"
+            echo "Target branch '${BRANCH}' not found remotely. Creating an orphan branch."
+            git checkout --orphan "${BRANCH}"
+            git reset --hard
           fi
           # Replace recipes/ with new build
           git rm -r --quiet recipes || true
           mkdir -p recipes
           cp -r ../dist/* recipes/
-          # Optional: add .nojekyll to avoid Jekyll processing
+          # Avoid Jekyll processing
           touch .nojekyll
           git add -A
           if git diff --cached --quiet; then
@@ -128,4 +131,4 @@ jobs:
             exit 0
           fi
           git commit -m "Deploy recipes - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
-          git push origin "$BRANCH"
+          git push origin "${BRANCH}"
