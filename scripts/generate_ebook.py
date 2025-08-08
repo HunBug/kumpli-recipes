@@ -28,6 +28,8 @@ def process_markdown_content(
 ) -> str:
     """Process markdown content to use optimized images"""
 
+    base_dir = os.path.dirname(base_path)
+
     def replace_image(match: Any) -> str:
         alt_text = match.group(1)
         image_path = match.group(2).strip()
@@ -36,15 +38,26 @@ def process_markdown_content(
             "./optimized-images/"
         ):
             return match.group(0)
-        # Normalize and strip extension
-        without_ext, _ = os.path.splitext(image_path)
-        # Remove leading ./
-        while without_ext.startswith("./"):
-            without_ext = without_ext[2:]
-        # Strip leading images/ prefix so output path matches
-        # the structure created by optimize_images.py
-        if without_ext.startswith("images/"):
-            without_ext = without_ext[len("images/"):]
+
+        # Resolve relative to the markdown file location
+        abs_img = os.path.normpath(os.path.join(base_dir, image_path))
+        parts = abs_img.split(os.sep)
+
+        # If the source image lives under images/, preserve subpath
+        if "images" in parts:
+            idx = parts.index("images")
+            subparts = parts[idx + 1:]
+            rel_under_images = "/".join(subparts)
+        else:
+            # Fallback: use the original path without leading ./ or ../
+            rel_under_images = image_path
+            while rel_under_images.startswith("./"):
+                rel_under_images = rel_under_images[2:]
+            while rel_under_images.startswith("../"):
+                rel_under_images = rel_under_images[3:]
+
+        # Change extension to .jpg
+        without_ext, _ = os.path.splitext(rel_under_images)
         optimized_path = f"{optimized_images_path}/{without_ext}.jpg"
         return f"![{alt_text}]({optimized_path})"
 

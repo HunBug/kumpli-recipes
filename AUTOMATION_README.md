@@ -24,6 +24,22 @@ This setup automatically optimizes images, generates e-books, and publishes your
 
 ## Local Testing
 
+Fast path (recommended)
+
+Use the helper script to build everything locally in one go:
+```bash
+./scripts/local_build.sh
+# or customize source dirs
+./scripts/local_build.sh images recipes dist
+```
+Then preview locally:
+```bash
+python3 -m http.server -d dist 8000
+# open http://localhost:8000/
+```
+
+Manual steps
+
 Optimize images (defaults to `images/` → `optimized-images/`):
 ```bash
 python scripts/optimize_images.py --input-dir images --output-dir optimized-images
@@ -34,10 +50,19 @@ Generate e-book (reads from `recipes/`, writes to `dist/`):
 python scripts/generate_ebook.py --input-dir recipes --output-dir dist --optimized-images optimized-images
 ```
 
-Generate EPUB (requires pandoc):
+Generate EPUB and standalone HTML (requires pandoc):
 ```bash
+# Ensure images are visible to pandoc/HTML
+rsync -a optimized-images/ dist/optimized-images/
+# Build outputs
 pandoc dist/kumpli-recipes.md -o dist/kumpli-recipes.epub --metadata title="Kumpli Recipes"
+pandoc dist/kumpli-recipes.md -o dist/book.html --standalone --metadata title="Kumpli Recipes" --css style.css
 ```
+
+Troubleshooting
+- Missing images in EPUB: make sure `dist/optimized-images/` exists (copy via rsync above) or run `./scripts/local_build.sh`.
+- Pandoc not installed: `sudo apt-get update && sudo apt-get install -y pandoc` (Ubuntu/Debian).
+- No recipes found: ensure markdown files live under `recipes/`.
 
 ## File Structure
 
