@@ -95,20 +95,41 @@ Tags: soul-food, comfort, korean, trauma-healing, Boo's-favorite, maa-craving
 
 ---
 
-## Classic OG Burger (No Korean Ingredients)
-
-This version brings you back to the Tallinn OG — comforting, simple, timeless.
+## Classic OG Burger (No Korean Ingredients) — with Fried Corn 🌽
+This version brings you back to the Tallinn OG — comforting, simple, timeless — now with a warm, tangy-sweet bite of fried corn for extra sunshine.
 
 Only major changes:
 
-- Skip gochujang and kimchi.
-- Add thin tomato slices (salted), coleslaw or lettuce.
-- Use classic condiments: mayo, ketchup, mustard (mixed or layered).
-- Pick your cheese (Emmental, cheddar, etc.).
+* Skip gochujang and kimchi.
+* Add **Fried Corn Layer** (recipe below).
+* Add thin tomato slices (salted), coleslaw or lettuce.
+* Use classic condiments: mayo, ketchup, mustard (mixed or layered).
+* Pick your cheese (Emmental, cheddar, etc.).
 
-**Assembly is the same** — just build it with love, not gochujang. 😉
+**Fried Corn Layer** (enough for 2 burgers):
 
----
+* ½ cup corn kernels (fresh or frozen, patted dry)
+* 1 tsp olive oil
+* Pinch of salt
+* Small squeeze of fresh lemon juice
+* Optional: tiny pinch smoked paprika or chili flakes for depth
+
+**Method:**
+
+1. Heat olive oil in a small pan over medium-high.
+2. Add corn and a pinch of salt; fry for 2–3 minutes, stirring occasionally, until slightly browned and nutty.
+3. Remove from heat, squeeze in lemon juice, and stir.
+
+**Assembly (bottom to top):**
+
+* Bottom bun
+* Burger sauce (mayo + ketchup + mustard mix)
+* Fried Corn Layer
+* Cheese-topped burger patty
+* Tomato slices (lightly salted)
+* Coleslaw or lettuce
+* Optional extra sauce
+* Top bun
 
 ## Kumpli Notes
 
