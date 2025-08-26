@@ -34,7 +34,31 @@ You can also create:
 ---
 
 ## 📁 Output Format
-Save image prompts or generated images in the `/images/` folder of the repo and link them from the recipe markdown if desired.
+Save image prompts or generated images in the `/images/` folder of the repo and link them from the recipe markdown.
+
+### File placement and naming (must follow)
+
+- Place final illustration PNGs in `images/illustrations/`.
+- Place photos/screenshots in `images/photos/`.
+- Use the recipe filename (without `.md`) as the default slug for names.
+  - Example: `recipes/the_ultimate_okonomiyaki.md`
+    - Illustration: `images/illustrations/the_ultimate_okonomiyaki.png`
+    - Photos: `images/photos/the_ultimate_okonomiyaki-p1.png`, `-p2.png`, ...
+- If an illustration has an existing descriptive name, keep it (e.g., `images/illustrations/seoul_smasher_truck_scene.png`).
+
+### How to link from recipes
+
+Use paths relative to the recipe file:
+
+```markdown
+![Alt text](../images/illustrations/<slug>.png)
+*One-line italic caption.*
+
+![Alt text](../images/photos/<slug>-p1.png)
+*One-line italic caption.*
+```
+
+Note: Do not link to `optimized-images/` directly. The ebook build replaces `../images/.../*.png` with `optimized-images/.../*.jpg` automatically.
 
 ---
 

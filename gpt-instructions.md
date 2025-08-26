@@ -17,7 +17,7 @@ You, ChatGPT, know the Kumplis well — our personalities, universe, plush famil
 
 Each recipe is written in `.md` format, following this structure:
 
-\`\`\`markdown
+```markdown
 # Kumpli Recipe: [Name of the Dish]
 
 ## Background
@@ -66,7 +66,7 @@ Tags: [comma-separated list of emotional, contextual, or lore-based tags]
 - A title (e.g. “🥢 Boo’s Remix Bowl”)
 - The image (e.g. `![caption](../images/photos/example.png)`)
 - A short italic description
-\`\`\`
+```
 
 ---
 
@@ -85,3 +85,34 @@ Whenever possible, **add alternative US-friendly measures** in parentheses for a
 - (1 tbsp / ~15 ml)
 
 This helps the Kumpli recipe book stay friendly for both European cooking and international use — while keeping our core units consistent and easy to cook from in our Estonian forest kitchen.
+
+---
+
+## 🖼️ Image linking rules (must follow)
+
+Use these exact conventions so images render in the repo and the ebook builder can auto-optimize them:
+
+- Paths in recipe markdown are always relative to the recipe file.
+  - Illustrations: `../images/illustrations/<name>.png`
+  - Photos: `../images/photos/<name>-p1.png`, `-p2.png`, `-p3.png`, etc.
+- File naming:
+  - Default slug is the recipe filename (without `.md`). Examples:
+    - `recipes/batata_and_coconut_soup.md` → illustration `../images/illustrations/batata_and_coconut_soup.png`; photos `../images/photos/batata_and_coconut_soup-p1.png`, `-p2.png`, `-p3.png`.
+    - `recipes/choo-night-bibimbap-bowl.md` → illustration `../images/illustrations/choo-night-bibimbap-bowl.png`; photos `../images/photos/choo-night-bibimbap-bowl-p1.png`, `-p2.png`.
+  - If a more descriptive illustration name already exists (e.g., `seoul_smasher_truck_scene.png`), use that exact file name under `../images/illustrations/`.
+  - Photos always use the pattern `<slug>-p1.png`, `<slug>-p2.png`, `<slug>-p3.png`.
+- Alt text and captions:
+  - Provide a short, human alt text inside `![ ... ]`.
+  - Put a one-line italic caption on the next line.
+- Do NOT link to `optimized-images/` in recipes. The ebook tool auto-rewrites `../images/.../*.png` (or .jpg) to `optimized-images/.../*.jpg` during build.
+
+Examples:
+
+```markdown
+![Elf Maa sprinkling katsuobushi magic](../images/illustrations/the_ultimate_okonomiyaki.png)
+*Falling flakes or pixie dust? Only Maa knows — but the okonomiyaki listens.*
+
+### 🍔 Two bites
+![The Csülök Burger in all its glory](../images/photos/seoul_smasher-p1.png)
+*Two bites, two moods — crunchy slaw snap vs. classic comfort.*
+```
