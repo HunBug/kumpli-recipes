@@ -3,8 +3,12 @@ name: Build and Deploy Recipes
 on:
   push:
     branches: [ main, master ]
+    paths-ignore:
+      - 'learning/**'
   pull_request:
     branches: [ main, master ]
+    paths-ignore:
+      - 'learning/**'
 
 jobs:
   build-and-deploy:
