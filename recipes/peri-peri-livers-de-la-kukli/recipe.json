@@ -1,0 +1,137 @@
+{
+  "title": "Peri-Peri Livers de la Kukli",
+  "slug": "peri-peri-livers-de-la-kukli",
+  "emoji": "🌶️🐔🌮",
+  "metadata": {
+    "cuisine": "South African–Mexican Fusion",
+    "type": "Taco",
+    "difficulty": "Medium",
+    "spicy": "Buldak",
+    "serves": "2–3 Kumplis",
+    "tags": [
+      "comfort-food",
+      "spicy",
+      "bold",
+      "quick",
+      "soul-warming",
+      "gluten-free"
+    ]
+  },
+  "timing": {
+    "prep_minutes": 10,
+    "total_minutes": 35
+  },
+  "ingredients": [
+    {
+      "group": "Chicken Livers",
+      "items": [
+        {
+          "amount": "400–500g",
+          "item": "chicken livers",
+          "notes": "cleaned and trimmed"
+        },
+        {
+          "amount": "1 small",
+          "item": "onion",
+          "notes": "finely sliced"
+        },
+        {
+          "amount": "2–3",
+          "item": "garlic cloves",
+          "notes": "minced"
+        },
+        {
+          "amount": "1 small",
+          "item": "chili (bird's eye or jalapeño)",
+          "notes": "finely chopped, adjust to taste"
+        },
+        {
+          "amount": "2 tbsp",
+          "item": "tomato paste"
+        },
+        {
+          "amount": "1/2 cup",
+          "item": "chicken stock or water"
+        },
+        {
+          "amount": "1–2 tbsp",
+          "item": "peri-peri sauce",
+          "notes": "or hot sauce + paprika + lemon juice"
+        },
+        {
+          "amount": "1 tbsp",
+          "item": "olive oil or butter"
+        },
+        {
+          "amount": "",
+          "item": "salt & pepper to taste"
+        }
+      ]
+    },
+    {
+      "group": "Optional Spice Boost",
+      "items": [
+        {
+          "amount": "1/2 tsp",
+          "item": "smoked paprika"
+        },
+        {
+          "amount": "1/4 tsp",
+          "item": "cayenne"
+        },
+        {
+          "amount": "dash",
+          "item": "dried oregano or thyme"
+        }
+      ]
+    },
+    {
+      "group": "To Serve",
+      "items": [
+        {
+          "amount": "",
+          "item": "corn tortillas",
+          "notes": "warmed"
+        },
+        {
+          "amount": "1",
+          "item": "avocado",
+          "notes": "sliced or smashed"
+        },
+        {
+          "amount": "",
+          "item": "fresh cilantro",
+          "notes": "optional"
+        },
+        {
+          "amount": "",
+          "item": "quick cabbage slaw: shredded red cabbage + lime juice + olive oil + salt"
+        },
+        {
+          "amount": "",
+          "item": "lime wedges"
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "step": "Prep the livers: Rinse and trim the chicken livers, removing any green or sinewy bits. Pat dry."
+    },
+    {
+      "step": "Sauté the aromatics: Heat oil in a pan over medium heat. Add onions and cook for 3–5 minutes until soft. Add garlic and chili; cook 1 more minute."
+    },
+    {
+      "step": "Brown the livers: Push onions to the side and add chicken livers. Cook for 3–4 minutes per side until browned but still pink in the center. Don't overcook!"
+    },
+    {
+      "step": "Make it saucy: Stir in tomato paste, peri-peri sauce, chicken stock, and any optional spices. Simmer 5–7 minutes until thickened and livers are cooked through but still tender."
+    },
+    {
+      "step": "Taste & tweak: Adjust salt, spice, and acidity with extra lemon juice or vinegar if needed."
+    },
+    {
+      "step": "Assemble the tacos: Warm corn tortillas, spread avocado, pile on livers, top with slaw and cilantro. Finish with a squeeze of lime."
+    }
+  ]
+}
