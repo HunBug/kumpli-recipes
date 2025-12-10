@@ -1,0 +1,201 @@
+{
+  "title": "Choo-Night Bibimbap Bowl",
+  "slug": "choo-night-bibimbap-bowl",
+  "emoji": "🍚🌶️",
+  "metadata": {
+    "cuisine": "Korean",
+    "type": "Rice Bowl",
+    "difficulty": "Medium",
+    "spicy": "Buldak",
+    "serves": "2 Kumplis",
+    "tags": [
+      "soul-warming",
+      "choo-series",
+      "comfort-food",
+      "cozy-night",
+      "cooking-together"
+    ]
+  },
+  "timing": {
+    "prep_minutes": 35,
+    "total_minutes": 40
+  },
+  "ingredients": [
+    {
+      "group": "Bibimbap Bowl",
+      "items": [
+        {
+          "amount": "2 cups",
+          "item": "cooked short-grain white rice",
+          "notes": "warm, not hot"
+        }
+      ]
+    },
+    {
+      "group": "Vegetables",
+      "items": [
+        {
+          "amount": "1 small",
+          "item": "carrot",
+          "notes": "julienned"
+        },
+        {
+          "amount": "1",
+          "item": "zucchini",
+          "notes": "julienned"
+        },
+        {
+          "amount": "1 cup",
+          "item": "spinach"
+        },
+        {
+          "amount": "1/2 cup",
+          "item": "mung bean sprouts"
+        },
+        {
+          "amount": "3–4",
+          "item": "shiitake mushrooms",
+          "notes": "or button, sliced"
+        },
+        {
+          "amount": "1/2 small",
+          "item": "cucumber",
+          "notes": "thinly sliced"
+        },
+        {
+          "amount": "",
+          "item": "kimchi",
+          "notes": "optional, for contrast"
+        },
+        {
+          "amount": "",
+          "item": "sesame oil, salt, garlic, soy sauce",
+          "notes": "for seasoning veggies"
+        }
+      ]
+    },
+    {
+      "group": "Protein",
+      "items": [
+        {
+          "amount": "2",
+          "item": "eggs",
+          "notes": "sunny side up, yolks runny!"
+        },
+        {
+          "amount": "",
+          "item": "sliced bulgogi beef, grilled tofu, or tempeh",
+          "notes": "optional"
+        }
+      ]
+    },
+    {
+      "group": "Toppings",
+      "items": [
+        {
+          "amount": "1 sheet",
+          "item": "gim (roasted seaweed)",
+          "notes": "crumbled"
+        },
+        {
+          "amount": "",
+          "item": "toasted sesame seeds"
+        },
+        {
+          "amount": "",
+          "item": "green onion",
+          "notes": "optional"
+        }
+      ]
+    },
+    {
+      "group": "Gochujang Bibimbap Sauce",
+      "items": [
+        {
+          "amount": "3 tbsp",
+          "item": "gochujang (Korean red chili paste)"
+        },
+        {
+          "amount": "1 tbsp",
+          "item": "sesame oil"
+        },
+        {
+          "amount": "1 tbsp",
+          "item": "sugar or honey"
+        },
+        {
+          "amount": "1 tbsp",
+          "item": "water",
+          "notes": "adjust for consistency"
+        },
+        {
+          "amount": "1 tbsp",
+          "item": "rice vinegar",
+          "notes": "or apple cider vinegar"
+        },
+        {
+          "amount": "1 tsp",
+          "item": "soy sauce"
+        },
+        {
+          "amount": "1 clove",
+          "item": "garlic",
+          "notes": "finely grated"
+        },
+        {
+          "amount": "1 tsp",
+          "item": "toasted sesame seeds",
+          "notes": "optional"
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "step": "Make the Sauce: In a small bowl, mix gochujang, sesame oil, sugar, water, vinegar, soy sauce, and garlic. Add toasted sesame seeds if using. Stir until smooth and glossy. Let it rest while prepping the veggies."
+    },
+    {
+      "group": "Prep the Vegetables",
+      "steps": [
+        {
+          "step": "Spinach: Blanch briefly, drain, and season with a pinch of salt and sesame oil."
+        },
+        {
+          "step": "Bean Sprouts: Blanch 2 minutes, then toss with salt and sesame oil."
+        },
+        {
+          "step": "Carrot, Zucchini, Mushrooms: Sauté each separately in a touch of oil with salt. Keep them crisp-tender."
+        },
+        {
+          "step": "Cucumber: Serve raw, lightly salted if desired."
+        }
+      ]
+    },
+    {
+      "step": "Cook the Eggs: Fry sunny side up until whites are set and yolks are runny."
+    },
+    {
+      "group": "Assemble the Bowl",
+      "steps": [
+        {
+          "step": "Scoop warm rice into each wide bowl."
+        },
+        {
+          "step": "Artfully arrange each topping in its own section around the bowl."
+        },
+        {
+          "step": "Place the egg in the center."
+        },
+        {
+          "step": "Drizzle generously with gochujang sauce."
+        },
+        {
+          "step": "Sprinkle sesame seeds and crumbled seaweed."
+        }
+      ]
+    },
+    {
+      "step": "Eat with Joy: Mix everything together at the table and enjoy the harmony of textures and flavors."
+    }
+  ]
+}
