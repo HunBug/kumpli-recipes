@@ -38,22 +38,13 @@ jobs:
           wget https://github.com/jgm/pandoc/releases/download/3.1.8/pandoc-3.1.8-1-amd64.deb
           sudo dpkg -i pandoc-3.1.8-1-amd64.deb
 
-      - name: Make scripts executable
+      - name: Validate recipes
         run: |
-          chmod +x scripts/optimize_images.py
-          chmod +x scripts/generate_ebook.py
+          python scripts/validate_recipes.py recipes/
 
-      - name: Optimize images
+      - name: Generate recipes (HTML + Markdown + optimized images)
         run: |
-          python scripts/optimize_images.py --input-dir images --output-dir optimized-images
-
-      - name: Generate e-book content
-        run: |
-          python scripts/generate_ebook.py --input-dir recipes --output-dir dist --optimized-images optimized-images
-
-      - name: Copy optimized images to dist
-        run: |
-          cp -r optimized-images dist/ || true
+          python scripts/generate_from_json.py --input-dir recipes --output-dir dist
 
       - name: Create simple CSS
         run: |
