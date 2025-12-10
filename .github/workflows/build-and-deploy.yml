@@ -81,11 +81,13 @@ jobs:
 
       - name: Generate EPUB
         run: |
-          pandoc dist/kumpli-recipes.md -o dist/kumpli-recipes.epub --metadata title="Kumpli Recipes"
+          cd dist
+          pandoc kumpli-recipes.md -o kumpli-recipes.epub --metadata title="Kumpli Recipes"
 
       - name: Generate standalone book HTML
         run: |
-          pandoc dist/kumpli-recipes.md -o dist/book.html --standalone --metadata title="Kumpli Recipes" --css style.css
+          cd dist
+          pandoc kumpli-recipes.md -o book.html --standalone --metadata title="Kumpli Recipes" --css style.css
 
       - name: Generate ToC index.html already created by generator
         run: |

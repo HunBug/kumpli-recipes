@@ -11,11 +11,19 @@ import os
 import json
 import re
 import argparse
+import sys
 from datetime import datetime
 from pathlib import Path
 from typing import List, Dict, Any, Tuple, Optional
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from PIL import Image, ImageOps
+
+try:
+    import markdown
+except ImportError:
+    print("❌ Error: markdown library not installed")
+    print("Install with: pip install markdown")
+    sys.exit(1)
 
 
 def slugify(text: str) -> str:
@@ -360,13 +368,6 @@ def write_recipe_html_pages(recipes_html_data: List[Dict[str, Any]], output_dir:
     recipe_template = jinja_env.get_template('recipe-page.html.j2')
     generated_files = []
     
-    # Try to import markdown, fallback to raw HTML if not available
-    try:
-        import markdown
-        has_markdown = True
-    except ImportError:
-        has_markdown = False
-    
     for recipe_data in recipes_html_data:
         # Reprocess story sections with relative image paths for HTML
         story_sections_relative = {}
@@ -379,14 +380,10 @@ def write_recipe_html_pages(recipes_html_data: List[Dict[str, Any]], output_dir:
                 section_content, recipe_folder, optimized_images_path, use_absolute_paths=False
             )
         
-        # Convert markdown to HTML in story sections if possible
+        # Convert markdown to HTML in story sections
         story_sections_html = {}
         for section_name, section_content in story_sections_relative.items():
-            if has_markdown:
-                story_sections_html[section_name] = markdown.markdown(section_content)
-            else:
-                # Simple fallback: wrap in <p> tags and convert line breaks
-                story_sections_html[section_name] = '<p>' + section_content.replace('\n\n', '</p><p>').replace('\n', '<br>') + '</p>'
+            story_sections_html[section_name] = markdown.markdown(section_content)
         
         recipe_data['story_sections'] = story_sections_html
         
