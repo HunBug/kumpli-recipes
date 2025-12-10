@@ -7,6 +7,14 @@
 {{ story_sections['Background'] }}
 
 {% endif -%}
+{% if recipes_data|length > 1 -%}
+**This chapter includes {{ recipes_data|length }} recipe variations:**
+
+{% for recipe_data in recipes_data -%}
+- {{ recipe_data.title }}
+{% endfor %}
+
+{% endif -%}
 {% for recipe in recipes -%}
 {{ recipe }}
 

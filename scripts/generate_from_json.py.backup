@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Generate e-book from recipe.json + story.md structure using Jinja2 templates.
-Reads folders with recipe*.json and story.md, generates combined markdown + individual HTML pages.
+Reads folders with recipe*.json and story.md, generates combined markdown + HTML index.
 
 Usage:
     python scripts/generate_from_json.py --input-dir recipes --output-dir dist
@@ -12,113 +12,14 @@ import json
 import re
 import argparse
 from pathlib import Path
-from typing import List, Dict, Any, Tuple, Optional
+from typing import List, Dict, Any, Tuple
 from jinja2 import Environment, FileSystemLoader, select_autoescape
-from PIL import Image, ImageOps
 
 
 def slugify(text: str) -> str:
     """Create a URL-friendly slug from a string."""
     slug = re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
     return slug
-
-
-def optimize_image(
-    input_path: str,
-    output_path: str,
-    quality: int = 85,
-    max_width: int = 1200,
-) -> bool:
-    """
-    Optimize a single image (resize, compress, convert to JPEG).
-    Returns True if successful, False otherwise.
-    """
-    try:
-        with Image.open(input_path) as img:
-            # Honor EXIF orientation
-            img = ImageOps.exif_transpose(img)
-
-            # Convert RGBA/LA to RGB if necessary
-            if img.mode in ("RGBA", "LA"):
-                background = Image.new("RGB", img.size, (255, 255, 255))
-                if img.mode == "RGBA":
-                    background.paste(img, mask=img.split()[-1])
-                else:
-                    background.paste(img)
-                img = background
-            elif img.mode != "RGB":
-                img = img.convert("RGB")
-
-            # Resize if too wide
-            if img.width > max_width:
-                ratio = max_width / img.width
-                new_height = int(img.height * ratio)
-                img = img.resize(
-                    (max_width, new_height),
-                    Image.Resampling.LANCZOS,
-                )
-
-            # Save optimized image
-            out_dir = os.path.dirname(output_path)
-            if out_dir:
-                os.makedirs(out_dir, exist_ok=True)
-            icc = img.info.get("icc_profile")
-            save_kwargs: Dict[str, Any] = {
-                "quality": quality,
-                "optimize": True,
-                "progressive": True,
-            }
-            if icc:
-                save_kwargs["icc_profile"] = icc
-            img.save(output_path, **save_kwargs)
-
-            return True
-    except Exception as e:
-        print(f"Warning: Could not optimize image {input_path}: {e}")
-        return False
-
-
-def process_recipe_images(
-    recipe_folder: Path,
-    output_dir: str,
-    quality: int = 85,
-    max_width: int = 1200,
-) -> int:
-    """
-    Process all images in a recipe folder, optimizing them to {output_dir}/images/recipes/{slug}/.
-    Returns the number of images processed.
-    """
-    processed = 0
-    # Gather all image files
-    image_files = (
-        list(recipe_folder.glob("*.png")) +
-        list(recipe_folder.glob("*.jpg")) +
-        list(recipe_folder.glob("*.jpeg"))
-    )
-    
-    recipe_slug = recipe_folder.name
-    images_output_dir = os.path.join(output_dir, "images", "recipes", recipe_slug)
-    
-    for image_file in image_files:
-        # Change extension to .jpg for optimized version
-        name_without_ext = image_file.stem
-        output_path = os.path.join(images_output_dir, name_without_ext + ".jpg")
-        
-        # Skip if up-to-date
-        try:
-            if os.path.exists(output_path):
-                src_mtime = os.path.getmtime(str(image_file))
-                out_mtime = os.path.getmtime(output_path)
-                if out_mtime >= src_mtime:
-                    continue
-        except OSError:
-            pass
-        
-        if optimize_image(str(image_file), output_path, quality, max_width):
-            processed += 1
-            print(f"  Optimized: {image_file.name} -> images/recipes/{recipe_slug}/{name_without_ext}.jpg")
-    
-    return processed
 
 
 def discover_recipe_folders(directory: str) -> List[Path]:
@@ -171,7 +72,15 @@ def load_story(story_file: Path) -> Dict[str, str]:
     return sections
 
 
-def setup_jinja_env(template_dir: str = "templates") -> Environment:
+def process_story_section_images(section_content: str, recipe_folder: Path, optimized_images_path: str) -> str:
+    """Process image paths in a story section."""
+    return process_image_paths(section_content, recipe_folder, optimized_images_path)
+
+
+def process_image_paths(content: str, recipe_folder: Path, optimized_images_path: str) -> str:
+    """Process image paths in story.md to point to optimized images."""
+    
+    def replace_image(match: Any) -> str:
     """Setup Jinja2 environment with templates."""
     env = Environment(
         loader=FileSystemLoader(template_dir),
@@ -182,35 +91,24 @@ def setup_jinja_env(template_dir: str = "templates") -> Environment:
     return env
 
 
-def process_image_paths(content: str, recipe_folder: Path, images_prefix: str, use_absolute_paths: bool = False) -> str:
+def process_image_paths(content: str, recipe_folder: Path, optimized_images_path: str) -> str:
     """Process image paths in story.md to point to optimized images."""
     
     def replace_image(match: Any) -> str:
         alt_text = match.group(1)
         image_path = match.group(2).strip()
         
-        # If already an absolute path, leave it
-        if image_path.startswith("/images/"):
+        # If already pointing to optimized-images, leave it
+        if image_path.startswith("optimized-images/") or image_path.startswith("./optimized-images/"):
             return match.group(0)
-        
-        # If already a relative images/ path and we need absolute, convert it
-        if image_path.startswith("images/") or image_path.startswith("./images/"):
-            if use_absolute_paths:
-                clean_path = image_path.lstrip("./")
-                return f"![{alt_text}](/{clean_path})"
-            else:
-                return match.group(0)
         
         # If it's a relative path in the recipe folder (like illustration.png, photo-1.png)
         if not image_path.startswith('../'):
-            # Convert to images path using recipe folder structure
+            # Convert to optimized path using recipe folder structure
             recipe_slug = recipe_folder.name
             without_ext, _ = os.path.splitext(image_path)
-            if use_absolute_paths:
-                new_path = f"/{images_prefix}/recipes/{recipe_slug}/{without_ext}.jpg"
-            else:
-                new_path = f"{images_prefix}/recipes/{recipe_slug}/{without_ext}.jpg"
-            return f"![{alt_text}]({new_path})"
+            optimized_path = f"{optimized_images_path}/{recipe_slug}/{without_ext}.jpg"
+            return f"![{alt_text}]({optimized_path})"
         
         # Handle ../images/ paths
         abs_img = (recipe_folder / image_path).resolve()
@@ -225,11 +123,8 @@ def process_image_paths(content: str, recipe_folder: Path, images_prefix: str, u
         
         # Change extension to .jpg
         without_ext, _ = os.path.splitext(rel_under_images)
-        if use_absolute_paths:
-            new_path = f"/{images_prefix}/{without_ext}.jpg"
-        else:
-            new_path = f"{images_prefix}/{without_ext}.jpg"
-        return f"![{alt_text}]({new_path})"
+        optimized_path = f"{optimized_images_path}/{without_ext}.jpg"
+        return f"![{alt_text}]({optimized_path})"
     
     # Pattern to match markdown images: ![alt](path.ext)
     content = re.sub(
@@ -237,11 +132,6 @@ def process_image_paths(content: str, recipe_folder: Path, images_prefix: str, u
         replace_image,
         content,
         flags=re.IGNORECASE,
-    )
-    
-    return content
-
-
 def render_recipe_folder(
     recipe_folder: Path,
     optimized_images_path: str,
@@ -263,8 +153,8 @@ def render_recipe_folder(
     
     # Process image paths in each story section
     for section_name, section_content in story_sections.items():
-        story_sections[section_name] = process_image_paths(
-            section_content, recipe_folder, optimized_images_path, use_absolute_paths=False
+        story_sections[section_name] = process_story_section_images(
+            section_content, recipe_folder, optimized_images_path
         )
     
     # Load all recipes
@@ -291,23 +181,13 @@ def render_recipe_folder(
         chapter_title=chapter_title,
         chapter_slug=chapter_slug,
         story_sections=story_sections,
-        recipes=rendered_recipes,
-        recipes_data=recipes_data  # For multi-recipe ToC
+        recipes=rendered_recipes
     )
     
     # Package data for HTML generation
     html_data = {
         'chapter_title': chapter_title,
         'chapter_slug': chapter_slug,
-        'story_sections': story_sections,
-        'recipes': recipes_data,
-        'recipe_folder': recipe_folder,  # For reprocessing images with absolute paths
-        'optimized_images_path': optimized_images_path
-    }
-    
-    return chapter_title, chapter_slug, chapter_content, html_data
-
-
 def generate_combined_markdown(
     recipe_folders: List[Path],
     output_dir: str,
@@ -353,33 +233,12 @@ def write_recipe_html_pages(recipes_html_data: List[Dict[str, Any]], output_dir:
     recipe_template = jinja_env.get_template('recipe-page.html.j2')
     generated_files = []
     
-    # Try to import markdown, fallback to raw HTML if not available
-    try:
-        import markdown
-        has_markdown = True
-    except ImportError:
-        has_markdown = False
-    
     for recipe_data in recipes_html_data:
-        # Reprocess story sections with absolute image paths for HTML
-        story_sections_absolute = {}
-        recipe_folder = recipe_data.pop('recipe_folder')
-        optimized_images_path = recipe_data.pop('optimized_images_path')
-        
-        for section_name, section_content in recipe_data['story_sections'].items():
-            # Reprocess with absolute paths
-            story_sections_absolute[section_name] = process_image_paths(
-                section_content, recipe_folder, optimized_images_path, use_absolute_paths=True
-            )
-        
-        # Convert markdown to HTML in story sections if possible
+        # Convert markdown to HTML in story sections
+        import markdown
         story_sections_html = {}
-        for section_name, section_content in story_sections_absolute.items():
-            if has_markdown:
-                story_sections_html[section_name] = markdown.markdown(section_content)
-            else:
-                # Simple fallback: wrap in <p> tags and convert line breaks
-                story_sections_html[section_name] = '<p>' + section_content.replace('\n\n', '</p><p>').replace('\n', '<br>') + '</p>'
+        for section_name, section_content in recipe_data['story_sections'].items():
+            story_sections_html[section_name] = markdown.markdown(section_content)
         
         recipe_data['story_sections'] = story_sections_html
         
@@ -397,6 +256,8 @@ def write_recipe_html_pages(recipes_html_data: List[Dict[str, Any]], output_dir:
 
 
 def write_toc_html(toc_items: List[Tuple[str, str]], output_dir: str, jinja_env: Environment) -> str:
+    return output_file, toc_items
+def write_toc_html(toc_items: List[Tuple[str, str]], output_dir: str, jinja_env: Environment) -> str:
     """Write a simple ToC HTML using Jinja2 template."""
     os.makedirs(output_dir, exist_ok=True)
     html_path = os.path.join(output_dir, "index.html")
@@ -410,56 +271,9 @@ def write_toc_html(toc_items: List[Tuple[str, str]], output_dir: str, jinja_env:
 
     return html_path
 
-
-def main() -> None:
-    parser = argparse.ArgumentParser(
-        description="Generate e-book from recipe.json + story.md structure"
-    )
-    parser.add_argument(
-        "--input-dir",
-        default="recipes",
-        help="Input directory with recipe folders (default: recipes)",
-    )
-    parser.add_argument(
-        "--output-dir",
-        default="dist",
-        help="Output directory",
-    )
-    parser.add_argument(
-        "--quality",
-        type=int,
-        default=85,
-        help="JPEG quality for image optimization (1-100, default: 85)",
-    )
-    parser.add_argument(
-        "--max-width",
-        type=int,
-        default=1200,
-        help="Maximum width in pixels for image optimization (default: 1200)",
-    )
-
-    args = parser.parse_args()
-
-    # Setup Jinja2 environment
-    jinja_env = setup_jinja_env()
-    
-    # Discover recipe folders
-    recipe_folders = discover_recipe_folders(args.input_dir)
-    print(f"Found {len(recipe_folders)} recipe folder(s)")
-
-    # Process images for all recipe folders
-    total_images = 0
-    for recipe_folder in recipe_folders:
-        processed = process_recipe_images(
-            recipe_folder, args.output_dir, args.quality, args.max_width
-        )
-        total_images += processed
-    if total_images > 0:
-        print(f"Optimized {total_images} image(s)")
-
     # Generate combined markdown and ToC items
     combined_md, toc_items, recipes_html_data = generate_combined_markdown(
-        recipe_folders, args.output_dir, "images", jinja_env
+        recipe_folders, args.output_dir, args.optimized_images, jinja_env
     )
     print(f"Generated combined markdown: {combined_md}")
 
@@ -474,3 +288,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

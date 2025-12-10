@@ -23,6 +23,17 @@
     </section>
     {% endif -%}
 
+    {% if recipes|length > 1 -%}
+    <section class="recipe-variants">
+      <p><strong>This chapter includes {{ recipes|length }} recipe variations:</strong></p>
+      <ul>
+      {% for recipe in recipes -%}
+        <li>{{ recipe.title }}</li>
+      {% endfor -%}
+      </ul>
+    </section>
+    {% endif -%}
+
     {% for recipe in recipes -%}
     <section class="recipe">
       <h2>{{ recipe.title }}{% if recipe.emoji %} {{ recipe.emoji }}{% endif %}</h2>
