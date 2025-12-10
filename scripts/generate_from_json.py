@@ -11,6 +11,7 @@ import os
 import json
 import re
 import argparse
+from datetime import datetime
 from pathlib import Path
 from typing import List, Dict, Any, Tuple, Optional
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -261,6 +262,12 @@ def render_recipe_folder(
     story_file = recipe_folder / 'story.md'
     story_sections = load_story(story_file)
     
+    # Get modification times
+    recipe_mtime = max(os.path.getmtime(f) for f in recipe_files)
+    story_mtime = os.path.getmtime(story_file) if story_file.exists() else recipe_mtime
+    last_modified = max(recipe_mtime, story_mtime)
+    last_modified_date = datetime.fromtimestamp(last_modified).strftime('%Y-%m-%d')
+    
     # Process image paths in each story section
     for section_name, section_content in story_sections.items():
         story_sections[section_name] = process_image_paths(
@@ -302,7 +309,8 @@ def render_recipe_folder(
         'story_sections': story_sections,
         'recipes': recipes_data,
         'recipe_folder': recipe_folder,  # For reprocessing images with absolute paths
-        'optimized_images_path': optimized_images_path
+        'optimized_images_path': optimized_images_path,
+        'last_modified': last_modified_date
     }
     
     return chapter_title, chapter_slug, chapter_content, html_data
@@ -381,6 +389,9 @@ def write_recipe_html_pages(recipes_html_data: List[Dict[str, Any]], output_dir:
                 story_sections_html[section_name] = '<p>' + section_content.replace('\n\n', '</p><p>').replace('\n', '<br>') + '</p>'
         
         recipe_data['story_sections'] = story_sections_html
+        
+        # Add generation timestamp
+        recipe_data['generated_date'] = datetime.now().strftime('%Y-%m-%d')
         
         # Generate HTML
         html_content = recipe_template.render(**recipe_data)
