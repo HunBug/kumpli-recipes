@@ -188,6 +188,8 @@ def setup_jinja_env(template_dir: str = "templates") -> Environment:
         trim_blocks=True,
         lstrip_blocks=True
     )
+    # Add markdown filter for converting markdown syntax to HTML
+    env.filters['markdown'] = lambda text: markdown.markdown(text)
     return env
 
 

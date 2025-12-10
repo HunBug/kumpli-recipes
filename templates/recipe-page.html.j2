@@ -77,11 +77,11 @@
         <ol start="{{ step_counter.value }}">
           {% for step in instruction_group['steps'] -%}
           <li>
-            {% if step.title %}<strong>{{ step.title }}:</strong> {% endif %}{{ step.step }}
+            {% if step.title %}<strong>{{ step.title }}:</strong> {% endif %}{{ step.step | markdown | safe }}
             {% if step.substeps -%}
             <ul class="substeps">
               {% for substep in step.substeps -%}
-              <li>{% if substep.title %}<strong>{{ substep.title }}:</strong> {% endif %}{{ substep.step }}</li>
+              <li>{% if substep.title %}<strong>{{ substep.title }}:</strong> {% endif %}{{ substep.step | markdown | safe }}</li>
               {% endfor -%}
             </ul>
             {% endif -%}
@@ -92,11 +92,11 @@
         {% else -%}
         <ol start="{{ step_counter.value }}">
           <li>
-            {% if instruction_group.title %}<strong>{{ instruction_group.title }}:</strong> {% endif %}{{ instruction_group.step }}
+            {% if instruction_group.title %}<strong>{{ instruction_group.title }}:</strong> {% endif %}{{ instruction_group.step | markdown | safe }}
             {% if instruction_group.substeps -%}
             <ul class="substeps">
               {% for substep in instruction_group.substeps -%}
-              <li>{% if substep.title %}<strong>{{ substep.title }}:</strong> {% endif %}{{ substep.step }}</li>
+              <li>{% if substep.title %}<strong>{{ substep.title }}:</strong> {% endif %}{{ substep.step | markdown | safe }}</li>
               {% endfor -%}
             </ul>
             {% endif -%}
