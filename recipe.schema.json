@@ -5,6 +5,7 @@
   "description": "Schema for Kumpli Cookbook recipes with metadata, ingredients, and instructions",
   "type": "object",
   "required": ["title", "slug", "metadata", "timing", "ingredients", "instructions"],
+  "additionalProperties": false,
   "properties": {
     "title": {
       "type": "string",
@@ -26,6 +27,7 @@
       "type": "object",
       "description": "Recipe classification and characteristics",
       "required": ["cuisine", "type", "difficulty", "serves"],
+      "additionalProperties": false,
       "properties": {
         "cuisine": {
           "type": "string",
@@ -114,6 +116,7 @@
       "type": "object",
       "description": "Time requirements",
       "required": ["prep_minutes", "total_minutes"],
+      "additionalProperties": false,
       "properties": {
         "prep_minutes": {
           "type": "integer",
@@ -192,6 +195,7 @@
     "ingredient": {
       "type": "object",
       "required": ["item"],
+      "additionalProperties": false,
       "properties": {
         "amount": {
           "type": "string",
@@ -213,6 +217,7 @@
     "instruction_step": {
       "type": "object",
       "required": ["step"],
+      "additionalProperties": false,
       "properties": {
         "step": {
           "type": "string",

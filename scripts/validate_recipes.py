@@ -65,11 +65,26 @@ class RecipeValidator:
             validate(instance=recipe_data, schema=self.schema)
             return True, []
         except ValidationError as e:
-            # Convert validation errors to readable warnings
+            # Treat structural errors (additional properties, wrong types) as errors, not warnings
             error_path = " -> ".join(str(p) for p in e.path) if e.path else "root"
-            warning_msg = f"Validation warning at '{error_path}': {e.message}"
-            warnings.append(warning_msg)
-            return False, warnings
+            
+            # Check if this is a structural error that should fail the build
+            is_structural_error = any([
+                'Additional properties are not allowed' in e.message,
+                'is not of type' in e.message and 'string' in e.message,
+                'is not of type' in e.message and 'integer' in e.message,
+                'is not of type' in e.message and 'object' in e.message,
+                'is not of type' in e.message and 'array' in e.message,
+            ])
+            
+            if is_structural_error:
+                error_msg = f"Schema error at '{error_path}': {e.message}"
+                return False, [error_msg]
+            else:
+                # Other validation issues are warnings (e.g., missing optional fields, pattern mismatches)
+                warning_msg = f"Validation warning at '{error_path}': {e.message}"
+                warnings.append(warning_msg)
+                return True, warnings
         except Exception as e:
             return False, [f"Unexpected validation error: {e}"]
     
@@ -158,10 +173,14 @@ class RecipeValidator:
         # Validate all recipe*.json files
         all_valid = True
         for recipe_file in recipe_files:
-            is_valid, json_warnings = self.validate_recipe(recipe_file)
-            if json_warnings:
-                warnings.extend([f"[{recipe_file.name}] {w}" for w in json_warnings])
-                all_valid = False
+            is_valid, messages = self.validate_recipe(recipe_file)
+            if messages:
+                # Determine if these are errors or warnings based on validity
+                if is_valid:
+                    warnings.extend([f"[{recipe_file.name}] {w}" for w in messages])
+                else:
+                    errors.extend([f"[{recipe_file.name}] {w}" for w in messages])
+                    all_valid = False
         
         # Validate story.md sections - errors for structure, warnings for content
         story_valid = True
