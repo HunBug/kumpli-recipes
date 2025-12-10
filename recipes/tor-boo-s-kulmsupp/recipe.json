@@ -1,0 +1,87 @@
+{
+  "title": "Tor-Boo's Külmsupp for Estonian \"Heatwaves\"",
+  "slug": "tor-boo-s-kulmsupp",
+  "emoji": "❄️🐟",
+  "serves": "6 Kumplis (or 8 if serving with hearty rye bread)",
+  "timing": {
+    "prep_minutes": 35,
+    "total_minutes": 240,
+    "note": "plus chilling"
+  },
+  "metadata": {
+    "cuisine": "Estonian",
+    "type": "cold soup",
+    "gluten_free": "Yes (if bread served is GF)",
+    "difficulty": "Easy",
+    "spice_level": "None",
+    "serves": 6,
+    "good_for": ["summer-lunch", "Estonian-heatwave", "fishing-day"],
+    "seasonality": "summer",
+    "ingredient_access": "standard-eu",
+    "ingredient_count": 14,
+    "storage": "keeps 2–3 days in fridge",
+    "reheating": "don't — it's best cold",
+    "pairing": "black rye bread, buttered karask",
+    "tags": ["refreshing", "creamy", "dill", "fishing-story", "pupi-approved"]
+  },
+  "ingredients": [
+    {
+      "group": "🐟 Fish & Protein",
+      "items": [
+        "300 g marinated herring fillet (light oil or mild brine)",
+        "5 large eggs, hard-boiled and chopped"
+      ]
+    },
+    {
+      "group": "🥔 Vegetables",
+      "items": [
+        "5 medium waxy potatoes (boiled in skins, peeled, diced)",
+        "1 large cucumber (or 2 small), finely diced",
+        "1 bunch spring onions (or 1 small red onion), finely chopped",
+        "15–20 g fresh dill, chopped"
+      ]
+    },
+    {
+      "group": "🥛 Creamy Liquid Base",
+      "items": [
+        "600 ml kefir",
+        "250 ml sour cream (hapukoor)",
+        "250 ml cold sparkling mineral water",
+        "1 tsp mild mustard (Dijon or Estonian style)",
+        "1–2 tsp fresh lemon juice (or mild vinegar like white wine or apple cider)"
+      ]
+    },
+    {
+      "group": "🧂 Seasoning",
+      "items": [
+        "Salt & freshly cracked black pepper (start light — adjust after chilling)"
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "step": 1,
+      "text": "**Boil & Prep Veggies:** Boil the potatoes in salted water (skin-on) until tender. Cool, peel, and dice into bite-sized chunks. Hard-boil the eggs, peel, and chop."
+    },
+    {
+      "step": 2,
+      "text": "**Dice the Rest:** Dice cucumber, chop onions and dill. Cut herring into bite-sized cubes. If the marinade is too strong or vinegary, rinse lightly and pat dry."
+    },
+    {
+      "step": 3,
+      "text": "**Mix the Base:** In a large bowl, whisk kefir, sour cream, mineral water, mustard, and lemon juice until smooth. Taste and season lightly — remember, the herring brings saltiness."
+    },
+    {
+      "step": 4,
+      "text": "**Assemble the Soup:** Gently stir potatoes, eggs, cucumber, onion, dill, and herring into the base. Don't overmix — a chunky, rustic look is part of the charm."
+    },
+    {
+      "step": 5,
+      "text": "**Chill Thoroughly:** Cover and refrigerate for at least 4 hours (overnight for peak flavor). This step is crucial — the flavors deepen and marry beautifully."
+    },
+    {
+      "step": 6,
+      "text": "**Serve Cold:** Ladle into bowls and garnish with extra dill or a boiled egg half. Serve with black rye bread or buttered karask."
+    }
+  ]
+}

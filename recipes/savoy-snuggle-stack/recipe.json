@@ -1,0 +1,131 @@
+{
+  "title": "Savoy Snuggle Stack",
+  "slug": "savoy-snuggle-stack",
+  "emoji": "🥬🥘",
+  "metadata": {
+    "cuisine": "Hungarian",
+    "type": "Casserole",
+    "difficulty": "Medium",
+    "spicy": "None",
+    "serves": "6–8 Kumplis",
+    "tags": [
+      "cabbage",
+      "sour-cream",
+      "comfort-food",
+      "boo-memories",
+      "gluten-free",
+      "autumn-winter"
+    ]
+  },
+  "timing": {
+    "prep_minutes": 35,
+    "total_minutes": 90
+  },
+  "ingredients": [
+    {
+      "amount": "1 large head",
+      "item": "Savoy cabbage",
+      "notes": "outer leaves removed"
+    },
+    {
+      "amount": "500 g",
+      "item": "ground pork",
+      "notes": "optionally mix with 250 g beef for deeper flavor"
+    },
+    {
+      "amount": "200 g",
+      "item": "white rice",
+      "notes": "uncooked; cook before layering"
+    },
+    {
+      "amount": "1 large",
+      "item": "onion",
+      "notes": "finely chopped"
+    },
+    {
+      "amount": "2–3 cloves",
+      "item": "garlic",
+      "notes": "minced"
+    },
+    {
+      "amount": "1 tsp",
+      "item": "sweet Hungarian paprika",
+      "notes": "plus more to taste"
+    },
+    {
+      "amount": "1/2 tsp",
+      "item": "smoked paprika",
+      "notes": "optional but recommended"
+    },
+    {
+      "amount": "1/2 tsp",
+      "item": "dried marjoram"
+    },
+    {
+      "amount": "",
+      "item": "salt & freshly ground black pepper to taste"
+    },
+    {
+      "amount": "300–400 ml",
+      "item": "full-fat sour cream",
+      "notes": "tejföl / hapukoor"
+    },
+    {
+      "amount": "2 tbsp",
+      "item": "lard",
+      "notes": "or neutral oil; lard adds tradition"
+    },
+    {
+      "amount": "1 small",
+      "item": "smoked sausage (kolbász)",
+      "notes": "thinly sliced – optional but traditional"
+    },
+    {
+      "amount": "",
+      "item": "butter or oil for greasing"
+    }
+  ],
+  "instructions": [
+    {
+      "step": "Blanch the Cabbage: Separate whole cabbage leaves. Blanch in salted boiling water for 2–3 minutes until soft and pliable. Drain and set aside."
+    },
+    {
+      "step": "Cook the Rice: Cook rice with a pinch of salt until just tender. Let it cool slightly."
+    },
+    {
+      "step": "Prepare the Meat Filling: Heat lard in a large skillet. Sauté onion until soft. Add garlic, ground meat, paprika, marjoram, salt, and pepper. Cook until browned and most liquid evaporates. Cool slightly."
+    },
+    {
+      "step": "Grease the Baking Dish: Lightly grease a deep oven-proof dish with butter or oil."
+    },
+    {
+      "group": "Layer the Casserole",
+      "steps": [
+        {
+          "step": "Start with cabbage leaves."
+        },
+        {
+          "step": "Add a layer of rice."
+        },
+        {
+          "step": "Then the meat mixture."
+        },
+        {
+          "step": "Spoon over some sour cream."
+        },
+        {
+          "step": "Optionally tuck in slices of kolbász."
+        },
+        {
+          "step": "Repeat until ingredients are used, finishing with cabbage + generous sour cream."
+        }
+      ]
+    },
+    {
+      "step": "Bake: Cover with foil and bake at 180°C (350°F) for ~45 minutes. Uncover and bake 15–20 minutes until the top is golden and bubbly."
+    },
+    {
+      "step": "Rest & Serve: Let rest 10–15 minutes before slicing. Serve warm, with extra sour cream if you're Maa."
+    }
+  ]
+}
