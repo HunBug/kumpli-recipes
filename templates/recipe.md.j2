@@ -1,0 +1,56 @@
+{# Render a single recipe variant #}
+### {{ recipe.title }}{% if recipe.emoji %} {{ recipe.emoji }}{% endif %}
+
+**Cuisine**: {{ recipe.metadata.cuisine }}  
+**Type**: {{ recipe.metadata.type }}  
+**Difficulty**: {{ recipe.metadata.difficulty }}  
+{% if recipe.metadata.spicy -%}
+**Spicy**: {{ recipe.metadata.spicy }}  
+{% endif -%}
+**Serves**: {{ recipe.metadata.serves }}  
+
+**Prep Time**: {{ recipe.timing.prep_minutes }} minutes  
+**Total Time**: {{ recipe.timing.total_minutes }} minutes  
+
+#### Ingredients
+
+{% for ingredient_group in recipe.ingredients -%}
+{% if ingredient_group.group -%}
+### {{ ingredient_group.group }}
+
+{% for ing in ingredient_group['items'] -%}
+- {{ ing.amount|default('') }} {{ ing.item }}{% if ing.notes %} ({{ ing.notes }}){% endif %}
+{% endfor %}
+
+{% else -%}
+- {{ ingredient_group.amount|default('') }} {{ ingredient_group.item }}{% if ingredient_group.notes %} ({{ ingredient_group.notes }}){% endif %}
+{% endif -%}
+{% endfor %}
+
+#### Instructions
+
+{% set step_counter = namespace(value=1) -%}
+{% for instruction_group in recipe.instructions -%}
+{% if instruction_group.group -%}
+### {{ instruction_group.group }}
+
+{% for step in instruction_group['steps'] -%}
+{{ step_counter.value }}. {% if step.title %}**{{ step.title }}**: {% endif %}{{ step.step }}
+{% if step.substeps -%}
+{% for substep in step.substeps -%}
+   * {% if substep.title %}**{{ substep.title }}**: {% endif %}{{ substep.step }}
+{% endfor -%}
+{% endif -%}
+{% set step_counter.value = step_counter.value + 1 -%}
+{% endfor %}
+
+{% else -%}
+{{ step_counter.value }}. {% if instruction_group.title %}**{{ instruction_group.title }}**: {% endif %}{{ instruction_group.step }}
+{% if instruction_group.substeps -%}
+{% for substep in instruction_group.substeps -%}
+   * {% if substep.title %}**{{ substep.title }}**: {% endif %}{{ substep.step }}
+{% endfor -%}
+{% endif -%}
+{% set step_counter.value = step_counter.value + 1 -%}
+{% endif -%}
+{% endfor %}

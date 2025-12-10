@@ -1,0 +1,150 @@
+{
+  "title": "The Seoul Smasher",
+  "slug": "seoul-smasher",
+  "emoji": "🍔🌶️",
+  "metadata": {
+    "cuisine": "Korean-American Fusion",
+    "type": "Burger",
+    "difficulty": "Medium",
+    "spicy": "Cheese Buldak",
+    "serves": "2 Kumplis (or 1 Kumpli + 1 secretly greedy dark elf)",
+    "good_for": ["forest-cabin cravings", "emotional resets", "gentle dominance"],
+    "seasonality": "autumn-winter comfort",
+    "ingredient_access": "standard-eu + asian-store",
+    "ingredient_count": 14,
+    "storage": "not recommended — eat hot",
+    "reheating": "not advised",
+    "pairing": "crunchy fries, fizzy ginger drink, deep hugs",
+    "tags": [
+      "soul-food",
+      "comfort",
+      "korean",
+      "trauma-healing",
+      "Boo's-favorite",
+      "maa-craving"
+    ]
+  },
+  "timing": {
+    "prep_minutes": 25,
+    "total_minutes": 35
+  },
+  "ingredients": [
+    {
+      "group": "Burger Patties",
+      "items": [
+        {
+          "amount": "2 x 150-180 g",
+          "item": "fatty beef balls",
+          "notes": "80/20 blend"
+        },
+        {
+          "item": "Salt & freshly cracked pepper"
+        },
+        {
+          "amount": "2 slices",
+          "item": "cheese",
+          "notes": "white cheddar, American, or melty favorite"
+        }
+      ]
+    },
+    {
+      "group": "Buns & Toppings",
+      "items": [
+        {
+          "amount": "2",
+          "item": "brioche or potato buns"
+        },
+        {
+          "amount": "2 tbsp",
+          "item": "onion jam",
+          "notes": "optional but amazing"
+        },
+        {
+          "item": "Pickled cucumber slices",
+          "notes": "not overly vinegary"
+        },
+        {
+          "item": "Gochujang aioli",
+          "notes": "see below"
+        },
+        {
+          "item": "Kimchi slaw",
+          "notes": "less wet version below"
+        },
+        {
+          "item": "Butter or sesame oil",
+          "notes": "for toasting"
+        }
+      ]
+    },
+    {
+      "group": "Kimchi Slaw (Less Wet Version)",
+      "items": [
+        {
+          "amount": "½ cup",
+          "item": "homemade coleslaw",
+          "notes": "lightly dressed"
+        },
+        {
+          "amount": "¼ cup",
+          "item": "finely chopped, well-drained kimchi"
+        },
+        {
+          "amount": "½ tsp",
+          "item": "sesame oil"
+        },
+        {
+          "amount": "½ tsp",
+          "item": "rice vinegar"
+        },
+        {
+          "item": "green onions, sesame seeds",
+          "notes": "optional"
+        }
+      ]
+    },
+    {
+      "group": "Gochujang Aioli",
+      "items": [
+        {
+          "amount": "3 tbsp",
+          "item": "mayo"
+        },
+        {
+          "amount": "1 tbsp",
+          "item": "gochujang"
+        },
+        {
+          "amount": "1 tsp",
+          "item": "rice vinegar or lemon juice"
+        },
+        {
+          "amount": "½ tsp",
+          "item": "honey or maple syrup"
+        },
+        {
+          "item": "pinch of garlic powder or sesame oil",
+          "notes": "optional"
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "step": "Make the sauces and slaw. Squeeze excess liquid from kimchi using paper towels or sieve. Mix kimchi slaw ingredients just before serving. Stir together gochujang aioli ingredients until smooth. Chill if needed."
+    },
+    {
+      "step": "Toast the buns. Slice buns and toast in butter or sesame oil until golden. Set aside."
+    },
+    {
+      "step": "Cook the burger patties. Heat cast iron skillet over high (level 7–8/9) until lightly smoking. Place chilled beef balls in pan. Smash once firmly with spatula and parchment. Season immediately. Cook 1.5–2 minutes until crusty. Flip, add cheese, cover, cook another 1–1.5 minutes until cheese melts."
+    },
+    {
+      "title": "Assemble (bottom to top)",
+      "step": "Bottom bun → Gochujang aioli → Cheese-topped burger patty → Onion jam → Kimchi slaw → Pickled cucumber slices → Optional extra aioli → Top bun"
+    },
+    {
+      "step": "Press gently, serve hot, and listen for the crunchy slaw snap."
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "title": "Cozy Rum Hot Chocolate for Four — Salted Caramel Edition",
+  "slug": "cozy-rum-hot-chocolate",
+  "emoji": "☕🥃",
+  "metadata": {
+    "cuisine": "Winter Cozy",
+    "type": "Hot Drink",
+    "gluten_free": true,
+    "difficulty": "Easy",
+    "spicy": "None (rum version), Mild Spice (chili version)",
+    "serves": "4 Kumplis",
+    "good_for": ["Cold evenings", "after-meditation rituals", "snowy returns"],
+    "seasonality": "Winter",
+    "ingredient_access": "standard-eu",
+    "ingredient_count": 12,
+    "storage": "Best consumed fresh",
+    "reheating": "Warm gently on low heat; do not boil",
+    "pairing": "Cinnamon rolls, ginger biscuits, quiet evenings",
+    "tags": ["hot chocolate", "winter drink", "rum", "chili chocolate", "salted caramel", "kumpli universe", "elf drink"]
+  },
+  "timing": {
+    "prep_minutes": 10,
+    "total_minutes": 15
+  },
+  "ingredients": [
+    {
+      "group": "Hot Chocolate Base",
+      "items": [
+        {
+          "amount": "1 liter",
+          "item": "whole milk"
+        },
+        {
+          "amount": "250 ml",
+          "item": "heavy cream"
+        },
+        {
+          "amount": "4 tbsp",
+          "item": "cocoa powder"
+        },
+        {
+          "amount": "80 g",
+          "item": "dark chocolate",
+          "notes": "chopped"
+        },
+        {
+          "amount": "3-4 tbsp",
+          "item": "sugar or honey",
+          "notes": "to taste"
+        },
+        {
+          "amount": "½ tsp",
+          "item": "ground cinnamon"
+        },
+        {
+          "amount": "¼ tsp",
+          "item": "ground nutmeg"
+        },
+        {
+          "amount": "2 tsp",
+          "item": "vanilla extract"
+        },
+        {
+          "amount": "4-8 tbsp",
+          "item": "dark rum",
+          "notes": "for Elf only"
+        },
+        {
+          "item": "chili flakes or chili powder",
+          "notes": "small pinch, for Gombocom, Ciraf, Silt version"
+        }
+      ]
+    },
+    {
+      "group": "Whipped Cream Topping",
+      "items": [
+        {
+          "amount": "150-200 ml",
+          "item": "heavy cream"
+        },
+        {
+          "amount": "1-2 tsp",
+          "item": "sugar",
+          "notes": "optional"
+        },
+        {
+          "amount": "½ tsp",
+          "item": "vanilla extract",
+          "notes": "optional"
+        }
+      ]
+    },
+    {
+      "group": "Salted Caramel Drizzle",
+      "items": [
+        {
+          "amount": "2 tbsp",
+          "item": "sugar"
+        },
+        {
+          "amount": "1 tbsp",
+          "item": "water"
+        },
+        {
+          "amount": "1 tbsp",
+          "item": "butter"
+        },
+        {
+          "amount": "30-40 ml",
+          "item": "heavy cream"
+        },
+        {
+          "item": "salt or flaky salt",
+          "notes": "pinch"
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "title": "Heat the base",
+      "step": "Warm the milk and cream in a medium pot over medium heat until steaming — do not let it boil."
+    },
+    {
+      "title": "Add dry ingredients",
+      "step": "Whisk in cocoa powder, sugar/honey, cinnamon, and nutmeg."
+    },
+    {
+      "title": "Melt the chocolate",
+      "step": "Add chopped dark chocolate and whisk until smooth, glossy, and fully melted."
+    },
+    {
+      "title": "Finish the hot chocolate",
+      "step": "Remove from heat and stir in vanilla.",
+      "substeps": [
+        {
+          "title": "For Elf version",
+          "step": "Add 1–2 tbsp rum per serving."
+        },
+        {
+          "title": "For Small Kumpli version",
+          "step": "Add a tiny pinch of chili for a warm playful kick."
+        }
+      ]
+    },
+    {
+      "title": "Whipped cream",
+      "step": "Beat the cream to soft peaks; add sugar or vanilla if desired."
+    },
+    {
+      "title": "Salted caramel",
+      "step": "Heat sugar + water until deep golden (do not stir). Remove from heat and whisk in butter. Add cream and salt; whisk until silky."
+    },
+    {
+      "title": "Assemble the mugs",
+      "step": "Pour the hot chocolate into cups, add whipped cream, drizzle with caramel, and sprinkle a hint of salt for sparkle."
+    }
+  ]
+}

@@ -16,3 +16,7 @@ vicceskedes: Cucmokoknak kaja keszites, etetes
 sult rizs es kaposztasalata.
 
 ChatGPT-vel osszehozni egy Kumpli-Tale tortenetet, es kore egy akar tobb fogasos, etel-ital-desszert estet.
+
+## Refactoring Related
+
+TBD: EPUB generation approach - decide between Pandoc (current) vs native Python libraries (ebooklib). Low priority, focus on HTML/GitHub Pages first.

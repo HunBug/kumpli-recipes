@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ chapter_title }} - Kumpli Recipes</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <nav class="breadcrumb">
+    <a href="../index.html">← All Recipes</a>
+  </nav>
+  
+  <article>
+    <header>
+      <h1>{{ chapter_title }}</h1>
+    </header>
+
+    {% if story_sections.get('Background') -%}
+    <section class="background">
+      <h2>Background</h2>
+      {{ story_sections['Background'] | safe }}
+    </section>
+    {% endif -%}
+
+    {% for recipe in recipes -%}
+    <section class="recipe">
+      <h2>{{ recipe.title }}{% if recipe.emoji %} {{ recipe.emoji }}{% endif %}</h2>
+      
+      <div class="metadata">
+        <p><strong>Cuisine:</strong> {{ recipe.metadata.cuisine }}</p>
+        <p><strong>Type:</strong> {{ recipe.metadata.type }}</p>
+        <p><strong>Difficulty:</strong> {{ recipe.metadata.difficulty }}</p>
+        {% if recipe.metadata.spicy -%}
+        <p><strong>Spicy:</strong> {{ recipe.metadata.spicy }}</p>
+        {% endif -%}
+        <p><strong>Serves:</strong> {{ recipe.metadata.serves }}</p>
+        <p><strong>Prep Time:</strong> {{ recipe.timing.prep_minutes }} minutes</p>
+        <p><strong>Total Time:</strong> {{ recipe.timing.total_minutes }} minutes</p>
+      </div>
+
+      <div class="ingredients">
+        <h3>Ingredients</h3>
+        {% for ingredient_group in recipe.ingredients -%}
+        {% if ingredient_group.group -%}
+        <h4>{{ ingredient_group.group }}</h4>
+        <ul>
+          {% for ing in ingredient_group['items'] -%}
+          <li>{{ ing.amount|default('') }} {{ ing.item }}{% if ing.notes %} <em>({{ ing.notes }})</em>{% endif %}</li>
+          {% endfor -%}
+        </ul>
+        {% else -%}
+        <ul>
+          <li>{{ ingredient_group.amount|default('') }} {{ ingredient_group.item }}{% if ingredient_group.notes %} <em>({{ ingredient_group.notes }})</em>{% endif %}</li>
+        </ul>
+        {% endif -%}
+        {% endfor -%}
+      </div>
+
+      <div class="instructions">
+        <h3>Instructions</h3>
+        {% set step_counter = namespace(value=1) -%}
+        {% for instruction_group in recipe.instructions -%}
+        {% if instruction_group.group -%}
+        <h4>{{ instruction_group.group }}</h4>
+        <ol start="{{ step_counter.value }}">
+          {% for step in instruction_group['steps'] -%}
+          <li>
+            {% if step.title %}<strong>{{ step.title }}:</strong> {% endif %}{{ step.step }}
+            {% if step.substeps -%}
+            <ul class="substeps">
+              {% for substep in step.substeps -%}
+              <li>{% if substep.title %}<strong>{{ substep.title }}:</strong> {% endif %}{{ substep.step }}</li>
+              {% endfor -%}
+            </ul>
+            {% endif -%}
+          </li>
+          {% set step_counter.value = step_counter.value + 1 -%}
+          {% endfor -%}
+        </ol>
+        {% else -%}
+        <ol start="{{ step_counter.value }}">
+          <li>
+            {% if instruction_group.title %}<strong>{{ instruction_group.title }}:</strong> {% endif %}{{ instruction_group.step }}
+            {% if instruction_group.substeps -%}
+            <ul class="substeps">
+              {% for substep in instruction_group.substeps -%}
+              <li>{% if substep.title %}<strong>{{ substep.title }}:</strong> {% endif %}{{ substep.step }}</li>
+              {% endfor -%}
+            </ul>
+            {% endif -%}
+          </li>
+        </ol>
+        {% set step_counter.value = step_counter.value + 1 -%}
+        {% endif -%}
+        {% endfor -%}
+      </div>
+    </section>
+    {% endfor -%}
+
+    {% if story_sections.get('Kumpli Notes') -%}
+    <section class="kumpli-notes">
+      <h2>Kumpli Notes</h2>
+      {{ story_sections['Kumpli Notes'] | safe }}
+    </section>
+    {% endif -%}
+
+    {% if story_sections.get('Cooking Moments') -%}
+    <section class="cooking-moments">
+      <h2>Cooking Moments</h2>
+      {{ story_sections['Cooking Moments'] | safe }}
+    </section>
+    {% endif -%}
+  </article>
+  
+  <footer>
+    <p><a href="../index.html">← Back to all recipes</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "description": "Supported markdown section structure for story.md files in Kumpli recipes. These sections are used by the build system to parse and format recipes.",
+  "structure": {
+    "h1_sections": {
+      "description": "Top-level sections (# heading) - NOT CURRENTLY SUPPORTED",
+      "allowed": [],
+      "note": "No H1 sections should be used in story.md files yet. May be supported in future."
+    },
+    "h2_sections": {
+      "description": "Second-level sections (## heading) - REQUIRED structure",
+      "required": [
+        "Background",
+        "Kumpli Notes"
+      ],
+      "optional": [
+        "Cooking Moments"
+      ],
+      "note": "These are the main anchors for automatic processing. Background and Kumpli Notes are required. Cooking Moments is optional but recommended if photos exist."
+    }
+  },
+  "validation_rules": {
+    "no_h1_allowed": "story.md files should not contain any # (H1) sections",
+    "required_sections_must_exist": "## Background and ## Kumpli Notes must be present",
+    "only_allowed_h2_sections": "Only Background, Kumpli Notes, and Cooking Moments are allowed as ## sections",
+    "case_sensitive": "Section names are case-sensitive and must match exactly"
+  },
+  "examples": {
+    "valid_structure": [
+      "## Background",
+      "## Kumpli Notes",
+      "## Cooking Moments"
+    ],
+    "invalid_structure": [
+      "# Background (H1 not allowed)",
+      "## Ingredients (not an allowed section name)",
+      "## background (wrong case)"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{# Main book template - combines all chapters #}
+# Kumpli Recipes
+
+{% for chapter in chapters -%}
+{{ chapter }}
+
+---
+
+{% endfor -%}

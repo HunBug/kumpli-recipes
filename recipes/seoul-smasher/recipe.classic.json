@@ -1,0 +1,114 @@
+{
+  "title": "The Seoul Smasher — Classic OG Burger with Fried Corn",
+  "slug": "seoul-smasher-classic",
+  "emoji": "🍔🌽",
+  "description": "This version brings you back to the Tallinn OG — comforting, simple, timeless — now with a warm, tangy-sweet bite of fried corn for extra sunshine.",
+  "metadata": {
+    "cuisine": "American",
+    "type": "Burger",
+    "difficulty": "Medium",
+    "spicy": "None",
+    "serves": "2 Kumplis",
+    "tags": [
+      "soul-food",
+      "comfort",
+      "classic",
+      "Boo's-favorite",
+      "maa-craving"
+    ]
+  },
+  "timing": {
+    "prep_minutes": 25,
+    "total_minutes": 35
+  },
+  "ingredients": [
+    {
+      "group": "Burger Patties",
+      "items": [
+        {
+          "amount": "2 x 150-180 g",
+          "item": "fatty beef balls",
+          "notes": "80/20 blend"
+        },
+        {
+          "item": "Salt & freshly cracked pepper"
+        },
+        {
+          "amount": "2 slices",
+          "item": "cheese",
+          "notes": "Emmental, cheddar, or favorite"
+        }
+      ]
+    },
+    {
+      "group": "Buns & Toppings",
+      "items": [
+        {
+          "amount": "2",
+          "item": "brioche or potato buns"
+        },
+        {
+          "item": "Thin tomato slices",
+          "notes": "lightly salted"
+        },
+        {
+          "item": "Coleslaw or lettuce"
+        },
+        {
+          "item": "Pickled cucumber slices"
+        },
+        {
+          "item": "Classic condiments: mayo, ketchup, mustard",
+          "notes": "mixed or layered"
+        },
+        {
+          "item": "Butter",
+          "notes": "for toasting"
+        }
+      ]
+    },
+    {
+      "group": "Fried Corn Layer",
+      "items": [
+        {
+          "amount": "½ cup",
+          "item": "corn kernels",
+          "notes": "fresh or frozen, patted dry"
+        },
+        {
+          "amount": "1 tsp",
+          "item": "olive oil"
+        },
+        {
+          "item": "Pinch of salt"
+        },
+        {
+          "item": "Small squeeze of fresh lemon juice"
+        },
+        {
+          "item": "tiny pinch smoked paprika or chili flakes",
+          "notes": "optional, for depth"
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "title": "Make the fried corn layer",
+      "step": "Heat olive oil in a small pan over medium-high. Add corn and a pinch of salt; fry for 2–3 minutes, stirring occasionally, until slightly browned and nutty. Remove from heat, squeeze in lemon juice, and stir."
+    },
+    {
+      "step": "Toast the buns. Slice buns and toast in butter until golden. Set aside."
+    },
+    {
+      "step": "Cook the burger patties. Heat cast iron skillet over high (level 7–8/9) until lightly smoking. Place chilled beef balls in pan. Smash once firmly with spatula and parchment. Season immediately. Cook 1.5–2 minutes until crusty. Flip, add cheese, cover, cook another 1–1.5 minutes until cheese melts."
+    },
+    {
+      "title": "Assemble (bottom to top)",
+      "step": "Bottom bun → Burger sauce (mayo + ketchup + mustard mix) → Fried Corn Layer → Cheese-topped burger patty → Tomato slices (lightly salted) → Coleslaw or lettuce → Optional extra sauce → Top bun"
+    },
+    {
+      "step": "Press gently, serve hot, and enjoy the sweet corn crunch with every bite."
+    }
+  ]
+}

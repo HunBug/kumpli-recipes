@@ -1,0 +1,87 @@
+{
+  "description": "Suggested tags for Kumpli Cookbook recipes. This is a reference for ChatGPT and humans - NOT enforced by validation. Feel free to create new tags as creativity demands.",
+  "categories": {
+    "emotion_and_vibe": [
+      "soul-warming",
+      "soul-food",
+      "comfort-food",
+      "cozy",
+      "emotional reset",
+      "trauma-healing",
+      "mythical-laziness",
+      "zero-effort",
+      "playful experiments"
+    ],
+    "characters_and_approval": [
+      "boo-approved",
+      "maa-tested",
+      "maa-classic",
+      "ciraf-approved",
+      "miku-mood",
+      "miku-might-cry",
+      "gombocom-approved",
+      "kugli-storage",
+      "gerzemice-friendly",
+      "pupi-approved"
+    ],
+    "kumpli_universe": [
+      "choo-series",
+      "rainy-faraway-moon",
+      "food-truck-dream",
+      "kumpli bubble food",
+      "estonian hapukoor nights",
+      "elf drink",
+      "fishing-story",
+      "allagan-tech"
+    ],
+    "dish_characteristics": [
+      "meaty",
+      "vegetarian",
+      "quick",
+      "hand-eaten",
+      "bold",
+      "spicy",
+      "refreshing",
+      "creamy"
+    ],
+    "cooking_style": [
+      "cooking-together",
+      "boo-experiments",
+      "rainy-day ritual",
+      "one-pot",
+      "no-fuss"
+    ],
+    "ingredients_focus": [
+      "cabbage",
+      "batata",
+      "coconut",
+      "dill",
+      "korean",
+      "okonomiyaki-love",
+      "hot chocolate",
+      "rum",
+      "chili chocolate",
+      "salted caramel"
+    ],
+    "seasons_and_occasions": [
+      "winter drink",
+      "summer-calm",
+      "anytime",
+      "celebration"
+    ],
+    "memories": [
+      "Boo's memories",
+      "Maa's stubborn love",
+      "Boo's-favorite",
+      "maa-craving",
+      "Ciraf-watching",
+      "no-meat-but-still-happy"
+    ]
+  },
+  "notes": {
+    "usage": "Use existing tags when appropriate, but don't hesitate to create new ones that capture the essence of a recipe.",
+    "formatting": "Tags should be lowercase with hyphens (kebab-case).",
+    "creativity": "Tags are part of the Kumpli storytelling. They can be playful, emotional, mythical, or deeply personal.",
+    "character_names": "Feel free to reference any Kumpli universe character: Maa, Boo, Ciraf, Miku, Kugli Head, Gombocom, Gerzemice, Pupi, etc."
+  }
+}

@@ -1,0 +1,25 @@
+{# Render a complete recipe chapter with custom section placement #}
+## {{ chapter_title }} { #{{ chapter_slug }} }
+
+{% if story_sections.get('Background') -%}
+### Background
+
+{{ story_sections['Background'] }}
+
+{% endif -%}
+{% for recipe in recipes -%}
+{{ recipe }}
+
+{% endfor -%}
+{% if story_sections.get('Kumpli Notes') -%}
+### Kumpli Notes
+
+{{ story_sections['Kumpli Notes'] }}
+
+{% endif -%}
+{% if story_sections.get('Cooking Moments') -%}
+### Cooking Moments
+
+{{ story_sections['Cooking Moments'] }}
+
+{% endif -%}

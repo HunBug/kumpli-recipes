@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kumpli Recipes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Kumpli Recipes</h1>
+    <p>
+      <a href="kumpli-recipes.epub">Download EPUB</a>
+      &middot; <a href="book.html">Read Online</a>
+    </p>
+  </header>
+  <main>
+    <h2>Table of Contents</h2>
+    <ul>
+{% for title, slug in toc_items %}
+      <li><a href="recipes/{{ slug }}.html">{{ title }}</a></li>
+{% endfor %}
+    </ul>
+  </main>
+</body>
+</html>

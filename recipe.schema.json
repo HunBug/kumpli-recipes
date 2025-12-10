@@ -1,0 +1,248 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/HunBug/kumpli-recipes/recipe.schema.json",
+  "title": "Kumpli Recipe",
+  "description": "Schema for Kumpli Cookbook recipes with metadata, ingredients, and instructions",
+  "type": "object",
+  "required": ["title", "slug", "metadata", "timing", "ingredients", "instructions"],
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Full display name of the recipe",
+      "examples": ["Boo's Smoky Burrito of Bravery", "The Ultimate Okonomiyaki"]
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL-safe identifier (lowercase, hyphens, no spaces)",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "examples": ["boos-smoky-burrito-of-bravery", "the-ultimate-okonomiyaki"]
+    },
+    "emoji": {
+      "type": "string",
+      "description": "Optional emoji representation of the dish",
+      "examples": ["🌯🔥", "🥞"]
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Recipe classification and characteristics",
+      "required": ["cuisine", "type", "difficulty", "serves"],
+      "properties": {
+        "cuisine": {
+          "type": "string",
+          "description": "Cuisine type or origin",
+          "examples": ["Mexican-inspired", "Japanese", "Korean", "European", "Fusion"]
+        },
+        "type": {
+          "type": "string",
+          "description": "Dish category",
+          "examples": ["Burrito", "Savory pancake", "Soup", "Main course", "Dessert", "Beverage"]
+        },
+        "gluten_free": {
+          "type": "boolean",
+          "description": "Whether the recipe is gluten-free"
+        },
+        "difficulty": {
+          "type": "string",
+          "description": "Cooking difficulty level (non-strict, creative freedom)",
+          "examples": ["Easy", "Medium", "Hard"]
+        },
+        "spicy": {
+          "type": "string",
+          "description": "Spiciness level (Kumpli scale, creative freedom)",
+          "examples": ["None", "Mild", "Cheese Buldak", "Buldak", "2x Buldak"]
+        },
+        "serves": {
+          "type": "string",
+          "description": "Number of servings, Kumpli style",
+          "examples": ["2 Kumplis", "4 Kumplis (or 2 with heroic appetites)", "2-3 Kumplis"]
+        },
+        "good_for": {
+          "type": "array",
+          "description": "Use cases and occasions",
+          "items": {
+            "type": "string"
+          },
+          "examples": [
+            ["comfort-food", "emotional reset", "cooking-together"],
+            ["rainy-day ritual", "playful experiments"]
+          ]
+        },
+        "seasonality": {
+          "type": "string",
+          "description": "Best season or 'anytime'",
+          "examples": ["anytime", "summer", "winter", "autumn"]
+        },
+        "ingredient_access": {
+          "type": "string",
+          "description": "Where to find ingredients",
+          "examples": ["standard-eu", "asian-store", "standard-eu + asian-store", "rare"]
+        },
+        "ingredient_count": {
+          "type": ["integer", "string"],
+          "description": "Total number of ingredients (can be range)",
+          "examples": [18, "15-18"]
+        },
+        "storage": {
+          "type": "string",
+          "description": "Storage recommendations",
+          "examples": ["Best fresh; can be kept in fridge for up to 2 days", "best fresh, can refrigerate up to 1 day"]
+        },
+        "reheating": {
+          "type": "string",
+          "description": "How to reheat leftovers",
+          "examples": ["Oven (foil wrapped) at 180°C for 10–15 min", "pan preferred, low-medium heat"]
+        },
+        "pairing": {
+          "type": "string",
+          "description": "Suggested beverages or side dishes",
+          "examples": ["Lime soda, spicy pickled onions", "miso soup, green tea, pickled vegetables"]
+        },
+        "tags": {
+          "type": "array",
+          "description": "Freeform descriptive tags",
+          "items": {
+            "type": "string"
+          },
+          "examples": [
+            ["soul-warming", "gerzemice-friendly", "boo-approved", "meaty"],
+            ["soul-food", "food-truck-dream", "okonomiyaki-love"]
+          ]
+        }
+      }
+    },
+    "timing": {
+      "type": "object",
+      "description": "Time requirements",
+      "required": ["prep_minutes", "total_minutes"],
+      "properties": {
+        "prep_minutes": {
+          "type": "integer",
+          "description": "Preparation time in minutes"
+        },
+        "total_minutes": {
+          "type": "integer",
+          "description": "Total time including cooking in minutes"
+        }
+      }
+    },
+    "ingredients": {
+      "type": "array",
+      "description": "Recipe ingredients, can be grouped or flat list",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "Ingredient group with subsections",
+            "required": ["group", "items"],
+            "properties": {
+              "group": {
+                "type": "string",
+                "description": "Group name/emoji",
+                "examples": ["🔥 Steak & Marinade", "Batter", "Toppings"]
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/ingredient"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/definitions/ingredient"
+          }
+        ]
+      }
+    },
+    "instructions": {
+      "type": "array",
+      "description": "Cooking steps in order, can be grouped or flat list",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "Instruction group with multiple steps",
+            "required": ["group", "steps"],
+            "properties": {
+              "group": {
+                "type": "string",
+                "description": "Group name",
+                "examples": ["Prepare the Sauce", "Prep Vegetables", "Assembly", "Variants"]
+              },
+              "steps": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/instruction_step"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/definitions/instruction_step"
+          }
+        ]
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional recipe notes, tips, or Kumpli wisdom (can also be in story.md)"
+    }
+  },
+  "definitions": {
+    "ingredient": {
+      "type": "object",
+      "required": ["item"],
+      "properties": {
+        "amount": {
+          "type": "string",
+          "description": "Quantity with unit",
+          "examples": ["500g", "2 tbsp", "1 cup", "2-3"]
+        },
+        "item": {
+          "type": "string",
+          "description": "Ingredient name",
+          "examples": ["flank steak", "all-purpose flour", "garlic cloves"]
+        },
+        "notes": {
+          "type": "string",
+          "description": "Preparation notes or alternatives",
+          "examples": ["minced", "fresh or frozen", "cooked or canned"]
+        }
+      }
+    },
+    "instruction_step": {
+      "type": "object",
+      "required": ["step"],
+      "properties": {
+        "step": {
+          "type": "string",
+          "description": "Instruction text"
+        },
+        "title": {
+          "type": "string",
+          "description": "Optional step title",
+          "examples": ["Marinate the Steak", "Assemble", "For spicy version"]
+        },
+        "substeps": {
+          "type": "array",
+          "description": "Optional variants or alternatives for this step. Use for serving suggestions, optional additions, or flavor variations. Each substep uses the same {title, step} structure.",
+          "items": {
+            "$ref": "#/definitions/instruction_step"
+          },
+          "examples": [
+            [
+              {
+                "title": "For Elf version",
+                "step": "Add 1–2 tbsp rum per serving."
+              },
+              {
+                "title": "For Small Kumpli version",
+                "step": "Add a tiny pinch of chili."
+              }
+            ]
+          ]
+        }
+      }
+    }
+  }
+}

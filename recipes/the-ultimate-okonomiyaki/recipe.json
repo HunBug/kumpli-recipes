@@ -1,0 +1,212 @@
+{
+  "title": "The Ultimate Okonomiyaki",
+  "slug": "the-ultimate-okonomiyaki",
+  "emoji": "🥞",
+  "metadata": {
+    "cuisine": "Japanese",
+    "type": "Savory pancake",
+    "gluten_free": false,
+    "difficulty": "Medium",
+    "spicy": "None",
+    "serves": "4 Kumplis (or 2 Kumplis with heroic appetites)",
+    "good_for": ["cooking-together", "rainy-day ritual", "playful experiments"],
+    "seasonality": "anytime",
+    "ingredient_access": "standard-eu + asian-store",
+    "ingredient_count": "15-18",
+    "storage": "best fresh, can refrigerate up to 1 day",
+    "reheating": "pan preferred, low-medium heat",
+    "pairing": "miso soup, green tea, pickled vegetables",
+    "tags": ["soul-food", "food-truck-dream", "Boo-experiments", "Maa-classic", "okonomiyaki-love"]
+  },
+  "timing": {
+    "prep_minutes": 20,
+    "total_minutes": 40
+  },
+  "ingredients": [
+    {
+      "group": "Batter",
+      "items": [
+        {
+          "amount": "190 g",
+          "item": "all-purpose flour",
+          "notes": "about 1 ½ cups"
+        },
+        {
+          "amount": "180 ml",
+          "item": "dashi",
+          "notes": "or water + ½ tsp dashi powder (~¾ cup)"
+        },
+        {
+          "amount": "60 ml",
+          "item": "mirin",
+          "notes": "~¼ cup"
+        },
+        {
+          "amount": "1 tsp",
+          "item": "baking powder"
+        },
+        {
+          "amount": "1 tsp",
+          "item": "salt"
+        },
+        {
+          "amount": "8 g",
+          "item": "sugar",
+          "notes": "~2 tsp"
+        },
+        {
+          "amount": "4",
+          "item": "large eggs"
+        }
+      ]
+    },
+    {
+      "group": "Veggies & Protein",
+      "items": [
+        {
+          "amount": "450 g",
+          "item": "cabbage",
+          "notes": "coarsely chopped (about 10 cups loosely packed)"
+        },
+        {
+          "amount": "115 g",
+          "item": "mung bean sprouts",
+          "notes": "about 2 cups"
+        },
+        {
+          "amount": "25 g",
+          "item": "chopped scallions",
+          "notes": "about ¼ cup"
+        },
+        {
+          "amount": "225 g",
+          "item": "fresh pork belly",
+          "notes": "thinly sliced (or use bacon for convenience)"
+        },
+        {
+          "amount": "115 g",
+          "item": "shrimp or squid",
+          "notes": "optional"
+        }
+      ]
+    },
+    {
+      "group": "Optional Hiroshima-style Layer",
+      "items": [
+        {
+          "amount": "280 g",
+          "item": "yakisoba noodles or fresh ramen",
+          "notes": "cooked & lightly seasoned with 1 tbsp / ~15 ml Worcestershire sauce"
+        }
+      ]
+    },
+    {
+      "group": "Toppings",
+      "items": [
+        {
+          "amount": "60 ml",
+          "item": "okonomiyaki sauce",
+          "notes": "~¼ cup"
+        },
+        {
+          "amount": "60 ml",
+          "item": "Kewpie mayo",
+          "notes": "~¼ cup"
+        },
+        {
+          "amount": "4 g",
+          "item": "aonori",
+          "notes": "about ¼ cup loosely packed powdered nori"
+        },
+        {
+          "amount": "~5 g",
+          "item": "bonito flakes (katsuobushi)",
+          "notes": "small handful"
+        },
+        {
+          "item": "extra chopped scallions",
+          "notes": "for garnish"
+        }
+      ]
+    },
+    {
+      "group": "For Cooking",
+      "items": [
+        {
+          "amount": "60 ml",
+          "item": "toasted sesame oil",
+          "notes": "~¼ cup"
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "group": "Prepare Batter",
+      "steps": [
+        {
+          "title": "Make the batter first",
+          "step": "In a large bowl, whisk together flour, dashi, mirin, baking powder, salt, and sugar. Beat in eggs until smooth."
+        },
+        {
+          "title": "Rest the batter",
+          "step": "Let it sit for 15 minutes so the flour hydrates and the flavor develops."
+        },
+        {
+          "title": "Add veggies just before cooking",
+          "step": "Fold in cabbage, bean sprouts, and scallions so they stay crisp and don't release too much liquid."
+        }
+      ]
+    },
+    {
+      "group": "Cook the Okonomiyaki",
+      "steps": [
+        {
+          "title": "Heat the pan",
+          "step": "Place a large cast-iron skillet or nonstick pan over medium heat. Add 1 tbsp (15 ml) sesame oil and spread evenly."
+        },
+        {
+          "title": "Cook the meat side first",
+          "step": "Lay a few slices of pork belly or bacon in the skillet. Once they start to turn opaque, spoon some batter over them to form a pancake ~15 cm across."
+        },
+        {
+          "title": "Optional noodle layer",
+          "step": "If using noodles, spread about 70 g cooked noodles over the pancake before flipping.",
+          "substeps": [
+            {
+              "title": "Hiroshima-style",
+              "step": "Use yakisoba noodles seasoned with Worcestershire sauce for authentic flavor."
+            }
+          ]
+        },
+        {
+          "title": "Flip & cook the second side",
+          "step": "Cook for about 4–5 minutes on the first side, then flip carefully."
+        },
+        {
+          "title": "Optional egg-on-top method",
+          "step": "After flipping, crack a raw egg onto the center of the pancake. Cover with a lid and cook until the white is set but the yolk is still slightly runny (about 2–3 minutes).",
+          "substeps": [
+            {
+              "title": "Without egg",
+              "step": "Simply cook until golden and crispy on both sides."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Finish & Serve",
+      "steps": [
+        {
+          "title": "Finish & serve",
+          "step": "Drizzle generously with okonomiyaki sauce and Kewpie mayo in a crisscross pattern. Sprinkle with aonori, bonito flakes, and scallions."
+        },
+        {
+          "title": "Eat immediately",
+          "step": "Cut into quarters and serve hot."
+        }
+      ]
+    }
+  ]
+}
