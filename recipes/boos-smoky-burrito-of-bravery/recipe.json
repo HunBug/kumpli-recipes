@@ -1,0 +1,225 @@
+{
+  "title": "Boo's Smoky Burrito of Bravery",
+  "slug": "boos-smoky-burrito-of-bravery",
+  "emoji": "🌯🔥",
+  "metadata": {
+    "cuisine": "Mexican-inspired",
+    "type": "Burrito",
+    "difficulty": "Medium",
+    "spicy": "Buldak",
+    "serves": "2–3 Kumplis",
+    "tags": [
+      "soul-warming",
+      "boo-approved",
+      "meaty",
+      "hand-eaten",
+      "comfort-food"
+    ]
+  },
+  "timing": {
+    "prep_minutes": 30,
+    "total_minutes": 45
+  },
+  "ingredients": [
+    {
+      "group": "Steak & Marinade",
+      "items": [
+        {
+          "amount": "500–600g",
+          "item": "flank steak"
+        },
+        {
+          "amount": "2 tbsp",
+          "item": "tomato paste"
+        },
+        {
+          "amount": "1 tsp",
+          "item": "smoked paprika"
+        },
+        {
+          "amount": "½ tsp",
+          "item": "chili flakes"
+        },
+        {
+          "amount": "½ tsp",
+          "item": "cumin"
+        },
+        {
+          "amount": "1 tbsp",
+          "item": "olive oil"
+        },
+        {
+          "amount": "1 tbsp",
+          "item": "lime juice"
+        },
+        {
+          "amount": "3",
+          "item": "garlic cloves",
+          "notes": "minced"
+        },
+        {
+          "amount": "",
+          "item": "salt & pepper"
+        }
+      ]
+    },
+    {
+      "group": "Cilantro-Lime Rice",
+      "items": [
+        {
+          "amount": "200g",
+          "item": "cooked white rice",
+          "notes": "about 1 cup"
+        },
+        {
+          "amount": "1 tbsp",
+          "item": "lime juice"
+        },
+        {
+          "amount": "1 tsp",
+          "item": "lime zest"
+        },
+        {
+          "amount": "2 tbsp",
+          "item": "chopped cilantro"
+        },
+        {
+          "amount": "",
+          "item": "salt to taste"
+        }
+      ]
+    },
+    {
+      "group": "Charred Corn Salsa",
+      "items": [
+        {
+          "amount": "1 cup",
+          "item": "corn kernels",
+          "notes": "fresh or frozen"
+        },
+        {
+          "amount": "½ small",
+          "item": "red onion",
+          "notes": "finely chopped"
+        },
+        {
+          "amount": "1 small",
+          "item": "jalapeño",
+          "notes": "optional, minced"
+        },
+        {
+          "amount": "1 tbsp",
+          "item": "lime juice"
+        },
+        {
+          "amount": "",
+          "item": "salt & chopped cilantro"
+        }
+      ]
+    },
+    {
+      "group": "Smoky Black Beans",
+      "items": [
+        {
+          "amount": "1 cup",
+          "item": "black beans",
+          "notes": "cooked or canned"
+        },
+        {
+          "amount": "1",
+          "item": "garlic clove",
+          "notes": "minced"
+        },
+        {
+          "amount": "1 tsp",
+          "item": "cumin"
+        },
+        {
+          "amount": "1 tsp",
+          "item": "smoked paprika"
+        },
+        {
+          "amount": "pinch",
+          "item": "chili flakes"
+        },
+        {
+          "amount": "",
+          "item": "salt"
+        }
+      ]
+    },
+    {
+      "group": "Other Fillings",
+      "items": [
+        {
+          "amount": "100g",
+          "item": "shredded cheddar or Jack cheese",
+          "notes": "~1 cup"
+        },
+        {
+          "amount": "2–3 large",
+          "item": "flour tortillas"
+        },
+        {
+          "amount": "1 ripe",
+          "item": "avocado",
+          "notes": "sliced and sprinkled with lime juice + salt"
+        }
+      ]
+    },
+    {
+      "group": "Chipotle Crema",
+      "items": [
+        {
+          "amount": "¼ cup (~60g)",
+          "item": "sour cream"
+        },
+        {
+          "amount": "1 tbsp",
+          "item": "tomato-smoke adobo mix",
+          "notes": "from marinade"
+        },
+        {
+          "amount": "1 tsp",
+          "item": "lime juice"
+        },
+        {
+          "amount": "pinch",
+          "item": "salt"
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "step": "Marinate the Steak: Mix the tomato paste, paprika, chili, cumin, garlic, oil, lime juice, salt, and pepper. Rub onto steak and marinate 30 minutes to overnight."
+    },
+    {
+      "step": "Prepare Rice: Mix warm cooked rice with lime juice, zest, cilantro, and salt."
+    },
+    {
+      "step": "Char the Corn: In a hot dry pan, sear corn until blackened spots appear. Mix with onion, lime, jalapeño, and salt."
+    },
+    {
+      "step": "Cook the Beans: Sauté garlic in a little oil, then add beans and spices. Heat gently until fragrant."
+    },
+    {
+      "step": "Sear the Steak: Heat a heavy pan with oil until hot. Pat steak dry slightly. Sear 1.5–2 minutes per side. Let rest 5 minutes, then slice thinly against the grain."
+    },
+    {
+      "step": "Make Crema: Blend sour cream with chipotle-adobo mix, lime, and salt."
+    },
+    {
+      "step": "Warm the Tortillas: Quickly heat in a dry pan or microwave wrapped in a damp towel."
+    },
+    {
+      "step": "Assemble: On each tortilla: cheese, rice, beans, steak slices, corn salsa, avocado, and chipotle crema."
+    },
+    {
+      "step": "Wrap It: Fold the bottom up, tuck in the sides, and roll tight like Boo's inner strength."
+    },
+    {
+      "step": "Optional Toasting: Pan-sear the finished burrito for extra crisp joy."
+    }
+  ]
+}
