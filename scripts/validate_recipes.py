@@ -228,7 +228,12 @@ def main():
             target_path = project_root / target_path
         
         if target_path.is_dir():
-            recipe_folders = [target_path]
+            # If target is the recipes directory itself, find all recipe folders within it
+            if target_path.resolve() == recipes_dir.resolve():
+                recipe_folders = find_recipe_folders(recipes_dir)
+            # Otherwise treat it as a single recipe folder
+            else:
+                recipe_folders = [target_path]
         else:
             print(f"❌ Not a directory: {target_path}")
             sys.exit(1)
