@@ -1,0 +1,81 @@
+{
+  "title": "Batata & Coconut Soup",
+  "slug": "batata-and-coconut-soup",
+  "emoji": "🍠🥥",
+  "metadata": {
+    "cuisine": "Sri Lankan-inspired",
+    "type": "Soup",
+    "difficulty": "Easy",
+    "spicy": "None",
+    "serves": "2–3 Kumplis",
+    "tags": [
+      "batata",
+      "coconut",
+      "comfort",
+      "gluten-free",
+      "vegetarian",
+      "summer-calm"
+    ]
+  },
+  "timing": {
+    "prep_minutes": 10,
+    "total_minutes": 30
+  },
+  "ingredients": [
+    {
+      "amount": "2 medium",
+      "item": "sweet potatoes",
+      "notes": "peeled and cubed"
+    },
+    {
+      "amount": "1",
+      "item": "onion",
+      "notes": "sliced"
+    },
+    {
+      "amount": "1 can (400 ml)",
+      "item": "coconut milk"
+    },
+    {
+      "amount": "1 cup (240 ml)",
+      "item": "water or veggie broth"
+    },
+    {
+      "amount": "1/2 tsp",
+      "item": "cinnamon"
+    },
+    {
+      "amount": "1/4 tsp",
+      "item": "ground cardamom"
+    },
+    {
+      "amount": "",
+      "item": "salt to taste"
+    },
+    {
+      "amount": "pinch",
+      "item": "chili flakes or curry powder",
+      "notes": "optional, for warmth"
+    }
+  ],
+  "instructions": [
+    {
+      "step": "In a medium pot, sauté the sliced onion in a bit of oil until soft and fragrant."
+    },
+    {
+      "step": "Add cubed sweet potatoes, cinnamon, cardamom, and salt. Stir gently."
+    },
+    {
+      "step": "Pour in water or veggie broth. Bring to a simmer and cook until sweet potatoes are fork-tender (about 15–20 minutes)."
+    },
+    {
+      "step": "Add the coconut milk and optional spices if using. Simmer for another 5 minutes."
+    },
+    {
+      "step": "Blend smooth for a creamy version, or leave it chunky for texture."
+    },
+    {
+      "step": "Garnish with fresh cilantro, fried shallots, or just a spoon and some silence."
+    }
+  ]
+}
