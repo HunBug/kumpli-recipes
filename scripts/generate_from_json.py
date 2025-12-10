@@ -347,8 +347,7 @@ def generate_combined_markdown(
 
 def write_recipe_html_pages(recipes_html_data: List[Dict[str, Any]], output_dir: str, jinja_env: Environment) -> List[str]:
     """Generate individual HTML pages for each recipe."""
-    recipes_dir = os.path.join(output_dir, "recipes")
-    os.makedirs(recipes_dir, exist_ok=True)
+    os.makedirs(output_dir, exist_ok=True)
     
     recipe_template = jinja_env.get_template('recipe-page.html.j2')
     generated_files = []
@@ -361,20 +360,20 @@ def write_recipe_html_pages(recipes_html_data: List[Dict[str, Any]], output_dir:
         has_markdown = False
     
     for recipe_data in recipes_html_data:
-        # Reprocess story sections with absolute image paths for HTML
-        story_sections_absolute = {}
+        # Reprocess story sections with relative image paths for HTML
+        story_sections_relative = {}
         recipe_folder = recipe_data.pop('recipe_folder')
         optimized_images_path = recipe_data.pop('optimized_images_path')
         
         for section_name, section_content in recipe_data['story_sections'].items():
-            # Reprocess with absolute paths
-            story_sections_absolute[section_name] = process_image_paths(
-                section_content, recipe_folder, optimized_images_path, use_absolute_paths=True
+            # Reprocess with relative paths (HTML is now at root level like markdown)
+            story_sections_relative[section_name] = process_image_paths(
+                section_content, recipe_folder, optimized_images_path, use_absolute_paths=False
             )
         
         # Convert markdown to HTML in story sections if possible
         story_sections_html = {}
-        for section_name, section_content in story_sections_absolute.items():
+        for section_name, section_content in story_sections_relative.items():
             if has_markdown:
                 story_sections_html[section_name] = markdown.markdown(section_content)
             else:
@@ -387,7 +386,7 @@ def write_recipe_html_pages(recipes_html_data: List[Dict[str, Any]], output_dir:
         html_content = recipe_template.render(**recipe_data)
         
         # Write file
-        output_file = os.path.join(recipes_dir, f"{recipe_data['chapter_slug']}.html")
+        output_file = os.path.join(output_dir, f"{recipe_data['chapter_slug']}.html")
         with open(output_file, "w", encoding="utf-8") as f:
             f.write(html_content)
         
