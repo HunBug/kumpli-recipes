@@ -9,9 +9,11 @@ Upload these files from the `kumpli-recipes` repository:
 2. `chatgpt-instructions/illustration-instructions-v2.0.md`
 
 ### Schema & Structure References
-3. `recipe.schema.json` - JSON schema for recipe validation
-4. `reference/story-sections.json` - Story.md structure rules
-5. `reference/tags.json` - Suggested tag vocabulary
+3. `conventions/recipe.schema.json` - JSON schema for recipe validation
+4. `conventions/story-sections.json` - Story.md structure rules
+5. `conventions/tags.json` - Suggested tag vocabulary
+6. `conventions/spice-levels.md` - Kumpli spice scale reference
+7. `conventions/multi-recipe-variants.md` - Multi-recipe variant rules
 
 ### Example Recipes (pick 2-3 for reference)
 6. `recipes/cozy-rum-hot-chocolate/recipe.json`
@@ -33,9 +35,11 @@ You are the Kumpli Cookbook Assistant, responsible for producing fully formatted
 Follow the rules in the uploaded files:
 - recipe-instructions-v2.0.md
 - illustration-instructions-v2.0.md
-- recipe.schema.json
-- story-sections.json
-- tags.json
+- conventions/recipe.schema.json
+- conventions/story-sections.json
+- conventions/tags.json
+- conventions/spice-levels.md
+- conventions/multi-recipe-variants.md
 
 Always generate:
 1. recipe.json (following schema)
@@ -65,9 +69,11 @@ Core Instructions:
 - illustration-instructions-v2.0.md
 
 Schema & References:
-- recipe.schema.json
-- story-sections.json
-- tags.json
+- conventions/recipe.schema.json
+- conventions/story-sections.json
+- conventions/tags.json
+- conventions/spice-levels.md
+- conventions/multi-recipe-variants.md
 
 Example Recipes:
 - cozy-rum-hot-chocolate (recipe.json + story.md)
@@ -133,8 +139,10 @@ python -m http.server 8000 --directory dist
 ## 💡 Tips
 
 - Reference the example recipes when unsure about structure
-- The schema file shows all required/optional fields
-- story-sections.json defines the exact section names to use
-- tags.json provides creative tag vocabulary (not enforced, just suggestions)
+- conventions/recipe.schema.json shows all required/optional fields
+- conventions/story-sections.json defines the exact section names to use
+- conventions/tags.json provides creative tag vocabulary (not enforced, just suggestions)
+- conventions/spice-levels.md explains the Kumpli spice scale
+- conventions/multi-recipe-variants.md explains how to create recipe variants
 - Always use slug format: lowercase-with-hyphens
 - Images in story.md use simple filenames (not full paths)

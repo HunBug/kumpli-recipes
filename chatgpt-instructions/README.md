@@ -23,12 +23,12 @@ Create a new ChatGPT Project and upload these files:
 - `recipe-instructions-v2.0.md`
 - `illustration-instructions-v2.0.md`
 
-**From root folder:**
+**From `conventions/` folder:**
 - `recipe.schema.json`
-
-**From `reference/` folder:**
 - `story-sections.json`
 - `tags.json`
+- `spice-levels.md`
+- `multi-recipe-variants.md`
 
 **Example recipes (pick 2-3):**
 - `recipes/cozy-rum-hot-chocolate/recipe.json`
@@ -115,11 +115,12 @@ ChatGPT will:
 
 ## 🔗 Related Documentation
 
-- `/recipe.schema.json` — JSON schema for validation
-- `/reference/tags.json` — Tag vocabulary suggestions
-- `/reference/story-sections.json` — Story structure rules
+- `/conventions/recipe.schema.json` — JSON schema for validation
+- `/conventions/tags.json` — Tag vocabulary suggestions
+- `/conventions/story-sections.json` — Story structure rules
+- `/conventions/spice-levels.md` — Kumpli spice scale
+- `/conventions/multi-recipe-variants.md` — Multi-recipe variants guide
 - `/AUTOMATION_README.md` — Build system documentation
-- `/docs/recipe-format-reference.md` — Technical format reference
 
 ---
 

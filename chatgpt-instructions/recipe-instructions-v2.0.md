@@ -22,7 +22,7 @@ Contains:
 - Ingredients (with optional groups)
 - Instructions (with optional groups and substeps)
 
-**Must validate against `recipe.schema.json`** ✅
+**Must validate against `conventions/recipe.schema.json`** ✅
 
 ### 2. `story.md` — Emotional Storytelling
 Contains exactly these sections:
@@ -30,7 +30,7 @@ Contains exactly these sections:
 - `## Kumpli Notes` — Cozy final thoughts
 - `## Cooking Moments` — (Optional) Photo captions
 
-**Must follow `story-sections.json` structure** ✅
+**Must follow `conventions/story-sections.json` structure** ✅
 
 ---
 
@@ -152,7 +152,7 @@ images/
 - Can have substeps: `{"step": "...", "substeps": [{"step": "..."}]}`
 - Can use markdown formatting in `step` text: `"**Bold text:** regular text"`
 
-**Refer to `recipe.schema.json` for complete validation rules.**
+**Refer to `conventions/recipe.schema.json` for complete validation rules.**
 
 ---
 
@@ -204,7 +204,7 @@ images/
 - Each photo gets an H3 section title
 - Format: `![Alt text](photo-N.jpg)` followed by `*Caption.*`
 
-**Refer to `story-sections.json` for complete structure rules.**
+**Refer to `conventions/story-sections.json` for complete structure rules.**
 
 ---
 
@@ -297,7 +297,7 @@ Vader Gombóc, Batman Gombóc, Boci, Marshmallow Yeti, Magentagy (Cheshire-cat e
 
 ## 🏷️ TAGS & METADATA GUIDANCE
 
-**Refer to `reference/tags.json` for suggested vocabulary.**
+**Refer to `conventions/tags.json` for suggested vocabulary.**
 
 Tag categories include:
 - **Emotion & vibe** — soul-warming, comfort-food, cozy, emotional reset
@@ -384,7 +384,7 @@ No matter the creativity, the final output must remain:
 
 Before delivering output, confirm:
 
-✅ `recipe.json` follows the schema (all required fields present)
+✅ `recipe.json` follows conventions/recipe.schema.json (all required fields present)
 ✅ `story.md` has exactly: `## Background`, `## Kumpli Notes`, (optional) `## Cooking Moments`
 ✅ Image references use simple filenames: `illustration.jpg`, `photo-1.jpg`
 ✅ Slug is lowercase with hyphens, no spaces
@@ -398,9 +398,11 @@ Before delivering output, confirm:
 ## 📚 REFERENCE FILES
 
 Always refer to:
-- `recipe.schema.json` — Complete JSON structure and validation rules
-- `story-sections.json` — Story.md structure requirements
-- `tags.json` — Tag vocabulary suggestions
+- `conventions/recipe.schema.json` — Complete JSON structure and validation rules
+- `conventions/story-sections.json` — Story.md structure requirements
+- `conventions/tags.json` — Tag vocabulary suggestions
+- `conventions/spice-levels.md` — Kumpli spice scale reference
+- `conventions/multi-recipe-variants.md` — Multi-recipe variant rules
 - Example recipes in `recipes/` folder — Real-world templates
 
 ---
