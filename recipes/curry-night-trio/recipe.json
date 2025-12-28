@@ -1,0 +1,130 @@
+{
+  "title": "Creamy Tomato–Garam Masala Curry with Chickpeas & Lots of Veggies",
+  "slug": "curry-night-trio",
+  "emoji": "🍅🍛",
+  "metadata": {
+    "cuisine": "Indian-inspired",
+    "type": "Curry",
+    "difficulty": "Easy",
+    "spicy": "Mild (optional chili)",
+    "serves": "6 Kumplis",
+    "good_for": ["meal prep", "cozy weeknight", "heal-my-soul"],
+    "seasonality": "anytime",
+    "ingredient_access": "standard-eu",
+    "ingredient_count": "~22 (depending on veggie mix)",
+    "storage": "Fridge 3–4 days. Sauce thickens as it rests.",
+    "reheating": "Stovetop preferred with a splash of water; microwave works.",
+    "pairing": "Rice, naan/flatbread, a bright cucumber salad",
+    "tags": ["comfort-food", "soul-warming", "one-pot", "vegetarian", "cozy"]
+  },
+  "timing": {
+    "prep_minutes": 20,
+    "total_minutes": 45
+  },
+  "ingredients": [
+    {
+      "group": "🧅 Aromatics",
+      "items": [
+        { "amount": "2 tbsp", "item": "olive oil", "notes": "or 1 tbsp oil + 1 tbsp butter" },
+        { "amount": "1 large", "item": "onion", "notes": "chopped" },
+        { "amount": "4 cloves", "item": "garlic", "notes": "minced" },
+        { "amount": "1 tbsp", "item": "fresh ginger", "notes": "grated" }
+      ]
+    },
+    {
+      "group": "🍅 Tomato Base",
+      "items": [
+        { "amount": "1 can (400 g)", "item": "crushed tomatoes" },
+        { "amount": "1 tbsp", "item": "tomato paste" },
+        { "amount": "1/2 cup", "item": "water", "notes": "add more later if needed" }
+      ]
+    },
+    {
+      "group": "🥕 Veggies (pick 6+)",
+      "items": [
+        { "amount": "2 medium", "item": "potatoes", "notes": "cubed" },
+        { "amount": "1 medium", "item": "sweet potato (batata)", "notes": "cubed" },
+        { "amount": "1", "item": "zucchini", "notes": "chopped" },
+        { "amount": "1–2 cups", "item": "Chinese cabbage", "notes": "sliced" },
+        { "amount": "1", "item": "carrot", "notes": "chopped" },
+        { "amount": "1", "item": "bell pepper", "notes": "chopped" },
+        { "amount": "1 cup", "item": "cauliflower or broccoli" },
+        { "amount": "1 handful", "item": "spinach", "notes": "add at the end" },
+        { "amount": "1 cup", "item": "peas", "notes": "optional" },
+        { "amount": "1", "item": "leek", "notes": "optional but wonderful" }
+      ]
+    },
+    {
+      "group": "🧆 Protein + Sauce Body",
+      "items": [
+        { "amount": "1 can", "item": "chickpeas", "notes": "drained & rinsed" },
+        { "amount": "1/2 cup", "item": "red lentils", "notes": "they melt into the sauce" }
+      ]
+    },
+    {
+      "group": "🌿 Spices",
+      "items": [
+        { "amount": "2–3 tsp", "item": "garam masala", "notes": "add at the end" },
+        { "amount": "1 1/2 tsp", "item": "cumin" },
+        { "amount": "1 tsp", "item": "turmeric" },
+        { "amount": "1 tsp", "item": "sweet paprika" },
+        { "amount": "1/2–1 tsp", "item": "chili flakes", "notes": "optional" },
+        { "amount": "1–2 tsp", "item": "salt", "notes": "to taste" }
+      ]
+    },
+    {
+      "group": "🥥 Creaminess (choose one)",
+      "items": [
+        { "amount": "1 can (400 ml)", "item": "coconut milk", "notes": "best creamy choice" },
+        { "amount": "1 cup", "item": "oat cream", "notes": "alternative" },
+        { "amount": "2 tbsp", "item": "butter or ghee", "notes": "alternative" }
+      ]
+    },
+    {
+      "group": "🍋 Finish",
+      "items": [
+        { "amount": "1", "item": "lemon or lime", "notes": "juice" },
+        { "item": "fresh cilantro or parsley" }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "group": "Cook",
+      "steps": [
+        {
+          "title": "Sauté aromatics",
+          "step": "Heat oil in a big pot. Add onion, garlic, and ginger. Cook until golden."
+        },
+        {
+          "title": "Toast base spices",
+          "step": "Add cumin, turmeric, paprika, and chili (optional). Toast for ~1 minute until fragrant."
+        },
+        {
+          "title": "Add tomatoes",
+          "step": "Stir in crushed tomatoes, tomato paste, and 1/2 cup water. Simmer 5 minutes."
+        },
+        {
+          "title": "Add chickpeas, lentils & hard veggies",
+          "step": "Add chickpeas, red lentils, potatoes, batata, and carrots. Simmer ~10 minutes."
+        },
+        {
+          "title": "Add soft veggies",
+          "step": "Add zucchini, cabbage, cauliflower/broccoli, and peppers. Simmer ~10 minutes more. If too thick, add a splash of water or broth."
+        },
+        {
+          "title": "Make it creamy",
+          "step": "Turn heat to medium-low. Stir in coconut milk (or oat cream, or butter/ghee). Simmer 2–3 minutes."
+        },
+        {
+          "title": "Add garam masala at the end",
+          "step": "Turn off heat and stir in garam masala. (Adding it at the end keeps the aroma bright.)"
+        },
+        {
+          "title": "Finish",
+          "step": "Add lemon/lime juice and salt to taste. Fold in spinach to wilt. Top with fresh herbs."
+        }
+      ]
+    }
+  ]
+}

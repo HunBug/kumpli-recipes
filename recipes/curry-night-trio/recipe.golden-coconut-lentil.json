@@ -1,0 +1,142 @@
+{
+  "title": "Golden Coconut Lentil Curry (14–20 Plants!)",
+  "slug": "curry-night-trio-golden-coconut-lentil",
+  "emoji": "💛🥥",
+  "metadata": {
+    "cuisine": "Coconut curry",
+    "type": "Curry",
+    "difficulty": "Easy",
+    "spicy": "Mild (optional chili flakes)",
+    "serves": "6 Kumplis",
+    "good_for": ["microbiome happiness", "meal prep", "cozy reset"],
+    "seasonality": "anytime",
+    "ingredient_access": "standard-eu",
+    "ingredient_count": "14–25 (depending on plant mix)",
+    "storage": "Fridge 3–4 days.",
+    "reheating": "Stovetop gentle simmer; add water/broth if thick.",
+    "pairing": "Rice, flatbread, quinoa—or eat as-is",
+    "tags": ["vegetarian", "one-pot", "coconut", "comfort-food", "soul-warming"]
+  },
+  "timing": {
+    "prep_minutes": 20,
+    "total_minutes": 45
+  },
+  "ingredients": [
+    {
+      "group": "🫧 Lentil Rule (Read Once, Then You’re Free)",
+      "items": [
+        {
+          "item": "Red lentils (Wash!)",
+          "notes": "Rinse 2–4 times until water runs mostly clear to remove extra starch/dust and reduce gumminess."
+        }
+      ]
+    },
+    {
+      "group": "🧅 Base Aromatics",
+      "items": [
+        { "amount": "1 large", "item": "onion" },
+        { "amount": "3–4 cloves", "item": "garlic" },
+        { "amount": "1 tbsp", "item": "fresh ginger", "notes": "grated" },
+        { "amount": "2", "item": "leeks", "notes": "sliced" }
+      ]
+    },
+    {
+      "group": "🥕 Veggies (pick 8–12)",
+      "items": [
+        { "amount": "1 large", "item": "carrot" },
+        { "amount": "1", "item": "zucchini" },
+        { "amount": "1 cup", "item": "Chinese cabbage (Napa)" },
+        { "amount": "1 medium", "item": "potato" },
+        { "amount": "1 medium", "item": "sweet potato (batata)" },
+        { "amount": "1 cup", "item": "broccoli florets" },
+        { "amount": "1 cup", "item": "cauliflower florets" },
+        { "amount": "1", "item": "red or yellow bell pepper" },
+        { "amount": "1 cup", "item": "spinach or kale", "notes": "add at the end" },
+        { "amount": "1/2 cup", "item": "peas" },
+        { "amount": "1 cup", "item": "mushrooms" },
+        { "amount": "1", "item": "tomato", "notes": "or 1/2 cup canned tomatoes" }
+      ]
+    },
+    {
+      "group": "Protein & Creaminess",
+      "items": [
+        { "amount": "1 cup", "item": "red lentils (Wash!)" },
+        { "amount": "1 can (400 ml)", "item": "coconut milk" },
+        { "amount": "1 tbsp", "item": "olive oil or coconut oil" }
+      ]
+    },
+    {
+      "group": "Spices (each counts as a plant)",
+      "items": [
+        { "amount": "2 tsp", "item": "curry powder" },
+        { "amount": "1 tsp", "item": "turmeric" },
+        { "amount": "1 tsp", "item": "cumin" },
+        { "amount": "1/2 tsp", "item": "coriander", "notes": "optional" },
+        { "amount": "1/2 tsp", "item": "smoked paprika", "notes": "optional" },
+        { "amount": "1/4–1/2 tsp", "item": "chili flakes", "notes": "optional" }
+      ]
+    },
+    {
+      "group": "Finishing Touches",
+      "items": [
+        { "amount": "1", "item": "lime or lemon", "notes": "juice" },
+        { "item": "fresh cilantro" },
+        { "item": "fresh parsley" },
+        { "amount": "1 tbsp", "item": "soy sauce or tamari" },
+        { "amount": "1 tbsp", "item": "honey or maple syrup", "notes": "optional" }
+      ]
+    },
+    {
+      "group": "Liquid",
+      "items": [
+        { "amount": "3–4 cups", "item": "vegetable broth" }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "group": "Before You Start (Extension)",
+      "steps": [
+        {
+          "step": "Rinse red lentils (Wash!) 2–4 times until the water runs mostly clear. This removes extra starch/dust/bitterness and helps the curry stay creamy instead of gummy."
+        },
+        {
+          "step": "(Context rule) Whole brown/green lentils only need one quick rinse; canned lentils just drain (optional light rinse if salty)."
+        }
+      ]
+    },
+    {
+      "group": "Cook (Original Steps)",
+      "steps": [
+        {
+          "title": "Sauté aromatics",
+          "step": "Heat oil in a large pot. Add onion, leeks, garlic, and ginger. Cook until soft and fragrant (6–8 minutes)."
+        },
+        {
+          "title": "Add spices",
+          "step": "Stir in curry powder, turmeric, cumin, paprika, and coriander (if using). Toast 1 minute until the aroma blooms."
+        },
+        {
+          "title": "Add lentils + hard vegetables",
+          "step": "Add red lentils (Wash!), carrots, potatoes, sweet potato, and cabbage. Stir to coat in spices."
+        },
+        {
+          "title": "Add coconut milk + broth",
+          "step": "Pour in coconut milk and 3–4 cups vegetable broth. Stir well and bring to a gentle simmer."
+        },
+        {
+          "title": "Add soft vegetables",
+          "step": "After 10 minutes, add zucchini, broccoli, cauliflower, mushrooms, and tomatoes. Simmer until everything is soft but not mushy (12–15 minutes more)."
+        },
+        {
+          "title": "Finish",
+          "step": "Turn off heat and add spinach (it will wilt), soy sauce, lemon/lime juice, and honey/maple (optional). Taste and adjust salt (or add a little more curry powder if needed)."
+        },
+        {
+          "title": "Serve",
+          "step": "Top with chopped parsley or cilantro, extra lime, and an optional drizzle of coconut milk. Serve with rice, flatbread, quinoa, or enjoy as-is."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "title": "Thai Coconut Chicken Curry with Zucchini & Radish",
+  "slug": "curry-night-trio-thai-coconut-chicken",
+  "emoji": "🥥🌴",
+  "metadata": {
+    "cuisine": "Thai-inspired",
+    "type": "Curry",
+    "difficulty": "Easy",
+    "spicy": "Adjustable",
+    "serves": "3–4 Kumplis",
+    "good_for": ["weeknight", "fragrant comfort", "rice bowls"],
+    "seasonality": "anytime",
+    "ingredient_access": "standard-eu",
+    "ingredient_count": 14,
+    "storage": "Fridge 2–3 days.",
+    "reheating": "Stovetop gentle simmer; loosen with a splash of water.",
+    "pairing": "Jasmine rice or basmati rice; fresh herbs",
+    "tags": ["quick", "coconut", "comfort-food", "fragrant", "one-pan"]
+  },
+  "timing": {
+    "prep_minutes": 15,
+    "total_minutes": 30
+  },
+  "ingredients": [
+    {
+      "group": "Main",
+      "items": [
+        { "amount": "2", "item": "chicken breasts", "notes": "sliced thinly" },
+        { "amount": "1", "item": "small zucchini", "notes": "sliced into half-moons" },
+        { "amount": "2–3", "item": "radishes", "notes": "thinly sliced or quartered" },
+        { "amount": "1", "item": "onion", "notes": "optional but helps round the flavor" },
+        { "amount": "3 cloves", "item": "garlic", "notes": "minced" },
+        { "amount": "1 tbsp", "item": "fresh ginger", "notes": "grated" },
+        { "amount": "1 can (400 ml)", "item": "coconut milk" },
+        { "amount": "1–2 tbsp", "item": "Thai curry paste", "notes": "red or yellow (or use DIY blend below)" },
+        { "amount": "1 tsp", "item": "paprika", "notes": "optional" },
+        { "amount": "1 tsp", "item": "soy sauce or fish sauce" },
+        { "amount": "1/2 tsp", "item": "sugar or honey" },
+        { "amount": "1/2", "item": "lime", "notes": "juice + a little zest" },
+        { "amount": "2 tbsp", "item": "oil", "notes": "coconut or neutral" },
+        { "item": "fresh basil or cilantro", "notes": "to garnish" },
+        { "item": "jasmine or basmati rice", "notes": "to serve" }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "group": "Cook",
+      "steps": [
+        {
+          "title": "Bloom the paste",
+          "step": "Heat oil over medium. Add curry paste and sauté 1–2 minutes until fragrant."
+        },
+        {
+          "title": "Aromatics",
+          "step": "Add garlic, ginger, and onion. Cook until softened."
+        },
+        {
+          "title": "Chicken",
+          "step": "Add chicken slices and stir-fry until just starting to color."
+        },
+        {
+          "title": "Coconut",
+          "step": "Pour in coconut milk, stir to combine, and bring to a gentle simmer."
+        },
+        {
+          "title": "Season",
+          "step": "Add soy/fish sauce, sugar, and a pinch of paprika (optional)."
+        },
+        {
+          "title": "Veggies",
+          "step": "Add zucchini and radish. Simmer 10–12 minutes until chicken is tender and sauce slightly thickens."
+        },
+        {
+          "title": "Finish",
+          "step": "Taste and balance: add lime juice for brightness, more fish/soy sauce for salt, or a little more sugar for sweetness. Serve over rice and garnish with herbs."
+        }
+      ]
+    },
+    {
+      "group": "Quick DIY Curry Paste (Optional)",
+      "steps": [
+        {
+          "step": "If you don’t have jarred paste, mix: paprika or chili powder, turmeric, cumin, coriander (optional), garlic (fresh or powder), ginger (fresh or powder), soy sauce, plus a squeeze of lime and a pinch of sugar."
+        },
+        {
+          "step": "Turn it into a paste with a spoonful of oil or coconut milk, then use it as your base."
+        }
+      ]
+    }
+  ]
+}
