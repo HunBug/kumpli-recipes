@@ -15,8 +15,21 @@ vicceskedes: Cucmokoknak kaja keszites, etetes
 
 sult rizs es kaposztasalata.
 
+valahogy osszegroupolni a rizs-maradekos recepteket, hogy mit lehet vele kezdeni (pl. sult rizs, rizs salata, rizs palacsinta, rizs puding, rizs leves, stb)
+
+malac fele koreai tuna bowl.
+
 ChatGPT-vel osszehozni egy Kumpli-Tale tortenetet, es kore egy akar tobb fogasos, etel-ital-desszert estet.
 
 ## Refactoring Related
 
 TBD: EPUB generation approach - decide between Pandoc (current) vs native Python libraries (ebooklib). Low priority, focus on HTML/GitHub Pages first.
+
+
+general 2026 jan 1:
+"""
+sit cosy (pies, cottige pie, and icecream)
+gomboc mexikoi
+elf deli, paradicsom, mediterran
+ciraf almas es sutis dolgok,almas dolgok. Almas Kosarka suti!
+"""

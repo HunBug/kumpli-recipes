@@ -15,12 +15,22 @@
     </p>
   </header>
   <main>
-    <h2>Table of Contents</h2>
+    <h2>Featured Recipes</h2>
     <ul>
 {% for title, slug in toc_items %}
       <li><a href="{{ slug }}.html">{{ title }}</a></li>
 {% endfor %}
     </ul>
+
+{% if raw_recipes %}
+    <h2>Raw Recipes (In Development)</h2>
+    <p>These recipes are still being prepared and formatted.</p>
+    <ul>
+{% for recipe in raw_recipes %}
+      <li><a href="{{ recipe.slug }}.html">{{ recipe.title }}</a></li>
+{% endfor %}
+    </ul>
+{% endif %}
   </main>
 </body>
 </html>

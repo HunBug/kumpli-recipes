@@ -12,6 +12,7 @@ import json
 import re
 import argparse
 import sys
+import shutil
 from datetime import datetime
 from pathlib import Path
 from typing import List, Dict, Any, Tuple, Optional
@@ -405,14 +406,263 @@ def write_recipe_html_pages(recipes_html_data: List[Dict[str, Any]], output_dir:
     return generated_files
 
 
-def write_toc_html(toc_items: List[Tuple[str, str]], output_dir: str, jinja_env: Environment) -> str:
+def discover_raw_recipes(raw_recipes_dir: str = "raw_recipes") -> List[Dict[str, str]]:
+    """Discover all markdown files in raw_recipes directory."""
+    raw_recipes = []
+    if not os.path.exists(raw_recipes_dir):
+        return raw_recipes
+    
+    for file in sorted(os.listdir(raw_recipes_dir)):
+        if file.endswith('.md'):
+            # Create title from filename
+            title = file[:-3].replace('_', ' ').replace('-', ' ').title()
+            slug = file[:-3]  # Remove .md extension
+            raw_recipes.append({
+                'title': title,
+                'filename': file,
+                'slug': slug,
+                'path': os.path.join(raw_recipes_dir, file)
+            })
+    
+    return raw_recipes
+
+
+def generate_raw_recipe_html(raw_recipes: List[Dict[str, str]], output_dir: str, jinja_env: Environment) -> int:
+    """Generate HTML pages from raw recipe markdown files."""
+    if not raw_recipes:
+        return 0
+    
+    generated = 0
+    
+    # Create a simple template for raw recipes
+    raw_template_content = """<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title }} - Kumpli Recipes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1><a href="index.html" style="color: inherit; text-decoration: none;">Kumpli Recipes</a></h1>
+    <p><a href="index.html">← Back to Home</a></p>
+  </header>
+  <main>
+    <article class="raw-recipe">
+      <div class="recipe-header">
+        <h2>{{ title }}</h2>
+        <p class="recipe-meta">Raw Recipe (In Development)</p>
+      </div>
+      <div class="recipe-content">
+        {{ content|safe }}
+      </div>
+    </article>
+  </main>
+</body>
+</html>"""
+    
+    from jinja2 import Template
+    raw_template = Template(raw_template_content)
+    
+    for recipe in raw_recipes:
+        # Read the markdown content
+        with open(recipe['path'], 'r', encoding='utf-8') as f:
+            md_content = f.read()
+        
+        # Convert markdown to HTML
+        html_content = markdown.markdown(md_content)
+        
+        # Render the template
+        page_html = raw_template.render(
+            title=recipe['title'],
+            content=html_content
+        )
+        
+        # Write the HTML file
+        output_file = os.path.join(output_dir, f"{recipe['slug']}.html")
+        with open(output_file, 'w', encoding='utf-8') as f:
+            f.write(page_html)
+        
+        generated += 1
+    
+    return generated
+
+
+def create_basic_css(output_dir: str) -> None:
+    """Create a basic style.css file."""
+    css_content = """/* Basic styling for Kumpli Recipes */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+header {
+  background-color: #fff;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+header h1 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #7f8c8d;
+}
+
+header a {
+  color: #3498db;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+main {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #2c3e50;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ecf0f1;
+}
+
+h2:first-child {
+  margin-top: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li a {
+  color: #3498db;
+  text-decoration: none;
+  font-size: 1.1em;
+  display: block;
+  padding: 5px 0;
+}
+
+li a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+/* Recipe page styles */
+.recipe-header {
+  margin-bottom: 30px;
+}
+
+.recipe-meta {
+  color: #7f8c8d;
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+
+.recipe-section {
+  margin-bottom: 30px;
+}
+
+.recipe-section h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.ingredients,
+.steps {
+  padding-left: 20px;
+}
+
+.ingredients li,
+.steps li {
+  margin-bottom: 8px;
+  padding-left: 5px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 20px 0;
+  display: block;
+}
+
+pre {
+  background-color: #f8f8f8;
+  padding: 15px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+code {
+  background-color: #f8f8f8;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  
+  header, main {
+    padding: 20px;
+  }
+}
+"""
+    
+    css_path = os.path.join(output_dir, "style.css")
+    with open(css_path, "w", encoding="utf-8") as f:
+        f.write(css_content)
+
+
+def write_toc_html(toc_items: List[Tuple[str, str]], output_dir: str, jinja_env: Environment, raw_recipes: List[Dict[str, str]] = None) -> str:
     """Write a simple ToC HTML using Jinja2 template."""
     os.makedirs(output_dir, exist_ok=True)
     html_path = os.path.join(output_dir, "index.html")
 
     # Render using template
     index_template = jinja_env.get_template('index.html.j2')
-    html_content = index_template.render(toc_items=toc_items)
+    html_content = index_template.render(
+        toc_items=toc_items,
+        raw_recipes=raw_recipes or []
+    )
 
     with open(html_path, "w", encoding="utf-8") as f:
         f.write(html_content)
@@ -476,8 +726,21 @@ def main() -> None:
     html_pages = write_recipe_html_pages(recipes_html_data, args.output_dir, jinja_env)
     print(f"Generated {len(html_pages)} individual recipe HTML page(s)")
 
+    # Discover raw recipes
+    raw_recipes = discover_raw_recipes("raw_recipes")
+    print(f"Found {len(raw_recipes)} raw recipe(s)")
+    
+    # Generate HTML pages for raw recipes
+    if raw_recipes:
+        generated_raw = generate_raw_recipe_html(raw_recipes, args.output_dir, jinja_env)
+        print(f"Generated {generated_raw} raw recipe HTML page(s)")
+    
+    # Create basic CSS
+    create_basic_css(args.output_dir)
+    print("Created style.css")
+
     # Write ToC HTML (index.html)
-    toc_html = write_toc_html(toc_items, args.output_dir, jinja_env)
+    toc_html = write_toc_html(toc_items, args.output_dir, jinja_env, raw_recipes)
     print(f"Generated ToC HTML: {toc_html}")
 
 
