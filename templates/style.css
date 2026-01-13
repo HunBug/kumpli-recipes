@@ -1,0 +1,25 @@
+.raw-recipe {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.recipe-header {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.recipe-content {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+h2 {
+    color: #333;
+}
+
+h3 {
+    color: #666;
+}

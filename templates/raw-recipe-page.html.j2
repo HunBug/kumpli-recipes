@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title }} - Kumpli Recipes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1><a href="index.html" style="color: inherit; text-decoration: none;">Kumpli Recipes</a></h1>
+    <p><a href="index.html">← Back to Home</a></p>
+  </header>
+  <main>
+    <article class="raw-recipe">
+      <div class="recipe-header">
+        <h2>{{ title }}</h2>
+        <p class="recipe-meta">Raw Recipe (In Development)</p>
+      </div>
+      <div class="recipe-content">
+        {{ content|safe }}
+      </div>
+    </article>
+  </main>
+</body>
+</html>

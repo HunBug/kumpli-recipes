@@ -27,6 +27,45 @@ except ImportError:
     sys.exit(1)
 
 
+# ============================================================================
+# CONFIGURATION
+# ============================================================================
+
+class Config:
+    """Configuration constants for the recipe generator."""
+    
+    # Directory paths
+    TEMPLATE_DIR = "templates"
+    RAW_RECIPES_DIR = "raw_recipes"
+    IMAGES_DIR = "images"
+    
+    # Template file names
+    TEMPLATE_RECIPE_MD = "recipe.md.j2"
+    TEMPLATE_CHAPTER_MD = "chapter.md.j2"
+    TEMPLATE_BOOK_MD = "book.md.j2"
+    TEMPLATE_INDEX_HTML = "index.html.j2"
+    TEMPLATE_RECIPE_PAGE_HTML = "recipe-page.html.j2"
+    TEMPLATE_RAW_RECIPE_PAGE_HTML = "raw-recipe-page.html.j2"
+    TEMPLATE_STYLE_CSS = "style.css"
+    
+    # Output file names
+    OUTPUT_COMBINED_MD = "kumpli-recipes.md"
+    OUTPUT_INDEX_HTML = "index.html"
+    
+    # Image optimization defaults
+    DEFAULT_IMAGE_QUALITY = 85
+    DEFAULT_IMAGE_MAX_WIDTH = 1200
+    
+    # File patterns
+    RECIPE_JSON_PREFIX = "recipe"
+    STORY_FILE = "story.md"
+    IMAGE_EXTENSIONS = ["*.png", "*.jpg", "*.jpeg"]
+
+
+# ============================================================================
+# HELPER FUNCTIONS
+# ============================================================================
+
 def slugify(text: str) -> str:
     """Create a URL-friendly slug from a string."""
     slug = re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
@@ -100,14 +139,12 @@ def process_recipe_images(
     """
     processed = 0
     # Gather all image files
-    image_files = (
-        list(recipe_folder.glob("*.png")) +
-        list(recipe_folder.glob("*.jpg")) +
-        list(recipe_folder.glob("*.jpeg"))
-    )
+    image_files = []
+    for ext in Config.IMAGE_EXTENSIONS:
+        image_files.extend(recipe_folder.glob(ext))
     
     recipe_slug = recipe_folder.name
-    images_output_dir = os.path.join(output_dir, "images", "recipes", recipe_slug)
+    images_output_dir = os.path.join(output_dir, Config.IMAGES_DIR, "recipes", recipe_slug)
     
     for image_file in image_files:
         # Change extension to .jpg for optimized version
@@ -126,7 +163,7 @@ def process_recipe_images(
         
         if optimize_image(str(image_file), output_path, quality, max_width):
             processed += 1
-            print(f"  Optimized: {image_file.name} -> images/recipes/{recipe_slug}/{name_without_ext}.jpg")
+            print(f"  Optimized: {image_file.name} -> {Config.IMAGES_DIR}/recipes/{recipe_slug}/{name_without_ext}.jpg")
     
     return processed
 
@@ -136,7 +173,7 @@ def discover_recipe_folders(directory: str) -> List[Path]:
     recipe_folders = set()
     for root, _dirs, files in os.walk(directory):
         for file in files:
-            if file.startswith('recipe') and file.endswith('.json'):
+            if file.startswith(Config.RECIPE_JSON_PREFIX) and file.endswith('.json'):
                 recipe_folders.add(Path(root))
     return sorted(recipe_folders)
 
@@ -181,8 +218,10 @@ def load_story(story_file: Path) -> Dict[str, str]:
     return sections
 
 
-def setup_jinja_env(template_dir: str = "templates") -> Environment:
+def setup_jinja_env(template_dir: str = None) -> Environment:
     """Setup Jinja2 environment with templates."""
+    if template_dir is None:
+        template_dir = Config.TEMPLATE_DIR
     env = Environment(
         loader=FileSystemLoader(template_dir),
         autoescape=select_autoescape(),
@@ -264,13 +303,13 @@ def render_recipe_folder(
     Returns (chapter_title, chapter_slug, markdown_content, recipe_data_for_html).
     """
     # Discover all recipe*.json files
-    recipe_files = sorted(recipe_folder.glob('recipe*.json'))
+    recipe_files = sorted(recipe_folder.glob(f'{Config.RECIPE_JSON_PREFIX}*.json'))
     
     if not recipe_files:
         return None
     
     # Load story.md and parse sections
-    story_file = recipe_folder / 'story.md'
+    story_file = recipe_folder / Config.STORY_FILE
     story_sections = load_story(story_file)
     
     # Get modification times
@@ -292,7 +331,7 @@ def render_recipe_folder(
         recipes_data.append(recipe)
     
     # Render recipes for markdown
-    recipe_template = jinja_env.get_template('recipe.md.j2')
+    recipe_template = jinja_env.get_template(Config.TEMPLATE_RECIPE_MD)
     rendered_recipes = []
     for recipe in recipes_data:
         rendered = recipe_template.render(recipe=recipe)
@@ -304,7 +343,7 @@ def render_recipe_folder(
     chapter_slug = first_recipe['slug']
     
     # Render chapter using template
-    chapter_template = jinja_env.get_template('chapter.md.j2')
+    chapter_template = jinja_env.get_template(Config.TEMPLATE_CHAPTER_MD)
     chapter_content = chapter_template.render(
         chapter_title=chapter_title,
         chapter_slug=chapter_slug,
@@ -353,11 +392,11 @@ def generate_combined_markdown(
             recipes_html_data.append(html_data)
     
     # Render book using template
-    book_template = jinja_env.get_template('book.md.j2')
+    book_template = jinja_env.get_template(Config.TEMPLATE_BOOK_MD)
     combined_content = book_template.render(chapters=chapters)
     
     # Write combined file
-    output_file = os.path.join(output_dir, "kumpli-recipes.md")
+    output_file = os.path.join(output_dir, Config.OUTPUT_COMBINED_MD)
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(combined_content)
     
@@ -368,7 +407,7 @@ def write_recipe_html_pages(recipes_html_data: List[Dict[str, Any]], output_dir:
     """Generate individual HTML pages for each recipe."""
     os.makedirs(output_dir, exist_ok=True)
     
-    recipe_template = jinja_env.get_template('recipe-page.html.j2')
+    recipe_template = jinja_env.get_template(Config.TEMPLATE_RECIPE_PAGE_HTML)
     generated_files = []
     
     for recipe_data in recipes_html_data:
@@ -406,8 +445,10 @@ def write_recipe_html_pages(recipes_html_data: List[Dict[str, Any]], output_dir:
     return generated_files
 
 
-def discover_raw_recipes(raw_recipes_dir: str = "raw_recipes") -> List[Dict[str, str]]:
+def discover_raw_recipes(raw_recipes_dir: str = None) -> List[Dict[str, str]]:
     """Discover all markdown files in raw_recipes directory."""
+    if raw_recipes_dir is None:
+        raw_recipes_dir = Config.RAW_RECIPES_DIR
     raw_recipes = []
     if not os.path.exists(raw_recipes_dir):
         return raw_recipes
@@ -434,36 +475,8 @@ def generate_raw_recipe_html(raw_recipes: List[Dict[str, str]], output_dir: str,
     
     generated = 0
     
-    # Create a simple template for raw recipes
-    raw_template_content = """<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ title }} - Kumpli Recipes</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1><a href="index.html" style="color: inherit; text-decoration: none;">Kumpli Recipes</a></h1>
-    <p><a href="index.html">← Back to Home</a></p>
-  </header>
-  <main>
-    <article class="raw-recipe">
-      <div class="recipe-header">
-        <h2>{{ title }}</h2>
-        <p class="recipe-meta">Raw Recipe (In Development)</p>
-      </div>
-      <div class="recipe-content">
-        {{ content|safe }}
-      </div>
-    </article>
-  </main>
-</body>
-</html>"""
-    
-    from jinja2 import Template
-    raw_template = Template(raw_template_content)
+    # Load the raw recipe template
+    raw_template = jinja_env.get_template(Config.TEMPLATE_RAW_RECIPE_PAGE_HTML)
     
     for recipe in raw_recipes:
         # Read the markdown content
@@ -489,176 +502,13 @@ def generate_raw_recipe_html(raw_recipes: List[Dict[str, str]], output_dir: str,
     return generated
 
 
-def create_basic_css(output_dir: str) -> None:
-    """Create a basic style.css file."""
-    css_content = """/* Basic styling for Kumpli Recipes */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f5f5f5;
-  padding: 20px;
-}
-
-header {
-  background-color: #fff;
-  padding: 30px;
-  margin-bottom: 30px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-header h1 {
-  color: #2c3e50;
-  margin-bottom: 10px;
-}
-
-header p {
-  color: #7f8c8d;
-}
-
-header a {
-  color: #3498db;
-  text-decoration: none;
-  margin: 0 5px;
-}
-
-header a:hover {
-  text-decoration: underline;
-}
-
-main {
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-h2 {
-  color: #2c3e50;
-  margin-top: 30px;
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #ecf0f1;
-}
-
-h2:first-child {
-  margin-top: 0;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  padding: 10px 0;
-  border-bottom: 1px solid #ecf0f1;
-}
-
-li:last-child {
-  border-bottom: none;
-}
-
-li a {
-  color: #3498db;
-  text-decoration: none;
-  font-size: 1.1em;
-  display: block;
-  padding: 5px 0;
-}
-
-li a:hover {
-  color: #2980b9;
-  text-decoration: underline;
-}
-
-/* Recipe page styles */
-.recipe-header {
-  margin-bottom: 30px;
-}
-
-.recipe-meta {
-  color: #7f8c8d;
-  font-size: 0.9em;
-  margin-top: 10px;
-}
-
-.recipe-section {
-  margin-bottom: 30px;
-}
-
-.recipe-section h3 {
-  color: #2c3e50;
-  margin-bottom: 15px;
-}
-
-.ingredients,
-.steps {
-  padding-left: 20px;
-}
-
-.ingredients li,
-.steps li {
-  margin-bottom: 8px;
-  padding-left: 5px;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin: 20px 0;
-  display: block;
-}
-
-pre {
-  background-color: #f8f8f8;
-  padding: 15px;
-  border-radius: 4px;
-  overflow-x: auto;
-}
-
-code {
-  background-color: #f8f8f8;
-  padding: 2px 6px;
-  border-radius: 3px;
-  font-family: monospace;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  body {
-    padding: 10px;
-  }
-  
-  header, main {
-    padding: 20px;
-  }
-}
-"""
-    
-    css_path = os.path.join(output_dir, "style.css")
-    with open(css_path, "w", encoding="utf-8") as f:
-        f.write(css_content)
-
-
 def write_toc_html(toc_items: List[Tuple[str, str]], output_dir: str, jinja_env: Environment, raw_recipes: List[Dict[str, str]] = None) -> str:
     """Write a simple ToC HTML using Jinja2 template."""
     os.makedirs(output_dir, exist_ok=True)
-    html_path = os.path.join(output_dir, "index.html")
+    html_path = os.path.join(output_dir, Config.OUTPUT_INDEX_HTML)
 
     # Render using template
-    index_template = jinja_env.get_template('index.html.j2')
+    index_template = jinja_env.get_template(Config.TEMPLATE_INDEX_HTML)
     html_content = index_template.render(
         toc_items=toc_items,
         raw_recipes=raw_recipes or []
@@ -668,6 +518,19 @@ def write_toc_html(toc_items: List[Tuple[str, str]], output_dir: str, jinja_env:
         f.write(html_content)
 
     return html_path
+
+
+def copy_static_files(output_dir: str, template_dir: str = None) -> None:
+    """Copy static files (CSS) from templates to output directory."""
+    if template_dir is None:
+        template_dir = Config.TEMPLATE_DIR
+    
+    css_source = os.path.join(template_dir, Config.TEMPLATE_STYLE_CSS)
+    css_dest = os.path.join(output_dir, Config.TEMPLATE_STYLE_CSS)
+    
+    if os.path.exists(css_source):
+        shutil.copy2(css_source, css_dest)
+        print(f"Copied {Config.TEMPLATE_STYLE_CSS}")
 
 
 def main() -> None:
@@ -687,14 +550,14 @@ def main() -> None:
     parser.add_argument(
         "--quality",
         type=int,
-        default=85,
-        help="JPEG quality for image optimization (1-100, default: 85)",
+        default=Config.DEFAULT_IMAGE_QUALITY,
+        help=f"JPEG quality for image optimization (1-100, default: {Config.DEFAULT_IMAGE_QUALITY})",
     )
     parser.add_argument(
         "--max-width",
         type=int,
-        default=1200,
-        help="Maximum width in pixels for image optimization (default: 1200)",
+        default=Config.DEFAULT_IMAGE_MAX_WIDTH,
+        help=f"Maximum width in pixels for image optimization (default: {Config.DEFAULT_IMAGE_MAX_WIDTH})",
     )
 
     args = parser.parse_args()
@@ -718,7 +581,7 @@ def main() -> None:
 
     # Generate combined markdown and ToC items
     combined_md, toc_items, recipes_html_data = generate_combined_markdown(
-        recipe_folders, args.output_dir, "images", jinja_env
+        recipe_folders, args.output_dir, Config.IMAGES_DIR, jinja_env
     )
     print(f"Generated combined markdown: {combined_md}")
 
@@ -727,7 +590,7 @@ def main() -> None:
     print(f"Generated {len(html_pages)} individual recipe HTML page(s)")
 
     # Discover raw recipes
-    raw_recipes = discover_raw_recipes("raw_recipes")
+    raw_recipes = discover_raw_recipes(Config.RAW_RECIPES_DIR)
     print(f"Found {len(raw_recipes)} raw recipe(s)")
     
     # Generate HTML pages for raw recipes
@@ -735,10 +598,9 @@ def main() -> None:
         generated_raw = generate_raw_recipe_html(raw_recipes, args.output_dir, jinja_env)
         print(f"Generated {generated_raw} raw recipe HTML page(s)")
     
-    # Create basic CSS
-    create_basic_css(args.output_dir)
-    print("Created style.css")
-
+    # Copy static files (CSS)
+    copy_static_files(args.output_dir)
+    
     # Write ToC HTML (index.html)
     toc_html = write_toc_html(toc_items, args.output_dir, jinja_env, raw_recipes)
     print(f"Generated ToC HTML: {toc_html}")
