@@ -1,0 +1,271 @@
+{
+  "title": "Boo's Smoky Burrito of Bravery — Spicy Minced Meat Version",
+  "slug": "boos-smoky-burrito-of-bravery-minced-meat",
+  "emoji": "🌯🔥",
+  "metadata": {
+    "cuisine": "Mexican-inspired",
+    "type": "Burrito",
+    "difficulty": "Easy",
+    "spicy": "Cheese Buldak",
+    "serves": "2–3 Kumplis",
+    "tags": [
+      "soul-warming",
+      "boo-approved",
+      "meaty",
+      "quick",
+      "comfort-food"
+    ]
+  },
+  "timing": {
+    "prep_minutes": 20,
+    "total_minutes": 30
+  },
+  "ingredients": [
+    {
+      "group": "🥩 Spiced Minced Meat",
+      "items": [
+        {
+          "amount": "500–600g",
+          "item": "minced beef"
+        },
+        {
+          "amount": "1 tbsp",
+          "item": "olive oil"
+        },
+        {
+          "amount": "2",
+          "item": "garlic cloves",
+          "notes": "minced"
+        },
+        {
+          "amount": "2 tbsp",
+          "item": "tomato paste"
+        },
+        {
+          "amount": "1 tsp",
+          "item": "smoked paprika"
+        },
+        {
+          "amount": "½ tsp",
+          "item": "chili flakes",
+          "notes": "more if you like it hot"
+        },
+        {
+          "amount": "1 tsp",
+          "item": "cumin"
+        },
+        {
+          "amount": "",
+          "item": "salt & pepper",
+          "notes": "to taste"
+        },
+        {
+          "amount": "1 tbsp",
+          "item": "lime juice",
+          "notes": "for finishing"
+        }
+      ]
+    },
+    {
+      "group": "🌿 Cilantro-Lime Rice",
+      "items": [
+        {
+          "amount": "200g",
+          "item": "cooked white rice",
+          "notes": "about 1 cup"
+        },
+        {
+          "amount": "1 tbsp",
+          "item": "lime juice"
+        },
+        {
+          "amount": "1 tsp",
+          "item": "lime zest"
+        },
+        {
+          "amount": "2 tbsp",
+          "item": "chopped cilantro"
+        },
+        {
+          "amount": "",
+          "item": "salt",
+          "notes": "to taste"
+        }
+      ]
+    },
+    {
+      "group": "🌽 Quick Corn Salsa",
+      "items": [
+        {
+          "amount": "1 cup",
+          "item": "corn kernels",
+          "notes": "fresh or frozen"
+        },
+        {
+          "amount": "½ small",
+          "item": "red onion",
+          "notes": "finely chopped"
+        },
+        {
+          "amount": "1 small",
+          "item": "jalapeño",
+          "notes": "optional, minced"
+        },
+        {
+          "amount": "1 tbsp",
+          "item": "lime juice"
+        },
+        {
+          "amount": "",
+          "item": "salt & chopped cilantro",
+          "notes": "to taste"
+        }
+      ]
+    },
+    {
+      "group": "🫘 Smoky Black Beans",
+      "items": [
+        {
+          "amount": "1 cup",
+          "item": "canned black beans",
+          "notes": "drained"
+        },
+        {
+          "amount": "1",
+          "item": "garlic clove",
+          "notes": "minced"
+        },
+        {
+          "amount": "1 tsp",
+          "item": "cumin"
+        },
+        {
+          "amount": "1 tsp",
+          "item": "smoked paprika"
+        },
+        {
+          "amount": "pinch",
+          "item": "chili flakes"
+        },
+        {
+          "amount": "",
+          "item": "salt",
+          "notes": "to taste"
+        }
+      ]
+    },
+    {
+      "group": "🌯 Other Fillings",
+      "items": [
+        {
+          "amount": "100g",
+          "item": "shredded cheese",
+          "notes": "Cheddar or Jack"
+        },
+        {
+          "amount": "2–3",
+          "item": "flour tortillas"
+        },
+        {
+          "amount": "1 ripe",
+          "item": "avocado",
+          "notes": "sliced, sprinkled with lime + salt"
+        },
+        {
+          "amount": "",
+          "item": "optional: toasted tortilla finish"
+        }
+      ]
+    },
+    {
+      "group": "🌶️ Quick Chipotle Crema",
+      "items": [
+        {
+          "amount": "¼ cup",
+          "item": "sour cream"
+        },
+        {
+          "amount": "1 tsp",
+          "item": "tomato paste"
+        },
+        {
+          "amount": "½ tsp",
+          "item": "smoked paprika"
+        },
+        {
+          "amount": "½ tsp",
+          "item": "chili flakes or chipotle hot sauce"
+        },
+        {
+          "amount": "1 tsp",
+          "item": "lime juice"
+        },
+        {
+          "amount": "pinch",
+          "item": "salt"
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "group": "Prepare Components",
+      "steps": [
+        {
+          "title": "Cilantro-Lime Rice",
+          "step": "Mix warm cooked rice with lime juice, zest, cilantro, and salt."
+        },
+        {
+          "title": "Char the Corn",
+          "step": "In a hot dry pan, sear corn until blackened spots appear. Toss with onion, jalapeño, lime, salt, and cilantro."
+        },
+        {
+          "title": "Cook the Beans",
+          "step": "Sauté garlic in a little oil, then add beans and spices. Simmer gently for flavor."
+        },
+        {
+          "title": "Make Chipotle Crema",
+          "step": "Mix sour cream with tomato paste, paprika, chili flakes, lime juice, and salt until smooth. Add a touch of water if too thick."
+        }
+      ]
+    },
+    {
+      "group": "Cook the Minced Meat",
+      "steps": [
+        {
+          "title": "Brown the meat",
+          "step": "Heat olive oil in a large pan over medium-high heat. Add minced garlic and sauté until fragrant."
+        },
+        {
+          "title": "Add beef & break it up",
+          "step": "Add minced beef and break it up with a spoon. Cook until it's halfway browned."
+        },
+        {
+          "title": "Add spices",
+          "step": "Stir in tomato paste, paprika, chili flakes, cumin, salt, and pepper. Cook until the meat is nicely browned and fragrant."
+        },
+        {
+          "title": "Finish with lime",
+          "step": "Turn off heat and stir in lime juice for brightness."
+        }
+      ]
+    },
+    {
+      "group": "Assemble & Serve",
+      "steps": [
+        {
+          "title": "Warm tortillas",
+          "step": "Quickly heat tortillas in a dry pan or wrap in a damp towel and microwave."
+        },
+        {
+          "title": "Layer & roll",
+          "step": "On each tortilla: cheese, rice, beans, minced meat, corn salsa, avocado, and a drizzle of chipotle crema. Roll burrito-style."
+        },
+        {
+          "title": "Optional pan-toast",
+          "step": "For a golden crust and extra joy, pan-sear the finished burrito for 1–2 minutes per side."
+        }
+      ]
+    }
+  ]
+}
