@@ -33,3 +33,5 @@ gomboc mexikoi
 elf deli, paradicsom, mediterran
 ciraf almas es sutis dolgok,almas dolgok. Almas Kosarka suti!
 """
+
+Maa shoud revise the recipes, she overrides the spices, she uses much more spices, herbs, flavors.
