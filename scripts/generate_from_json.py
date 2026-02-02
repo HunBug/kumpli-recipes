@@ -229,7 +229,7 @@ def setup_jinja_env(template_dir: str = None) -> Environment:
         lstrip_blocks=True
     )
     # Add markdown filter for converting markdown syntax to HTML
-    env.filters['markdown'] = lambda text: markdown.markdown(text)
+    env.filters['markdown'] = lambda text: markdown.markdown(text, extensions=['tables'])
     return env
 
 
@@ -425,7 +425,7 @@ def write_recipe_html_pages(recipes_html_data: List[Dict[str, Any]], output_dir:
         # Convert markdown to HTML in story sections
         story_sections_html = {}
         for section_name, section_content in story_sections_relative.items():
-            story_sections_html[section_name] = markdown.markdown(section_content)
+            story_sections_html[section_name] = markdown.markdown(section_content, extensions=['tables'])
         
         recipe_data['story_sections'] = story_sections_html
         
@@ -484,7 +484,7 @@ def generate_raw_recipe_html(raw_recipes: List[Dict[str, str]], output_dir: str,
             md_content = f.read()
         
         # Convert markdown to HTML
-        html_content = markdown.markdown(md_content)
+        html_content = markdown.markdown(md_content, extensions=['tables'])
         
         # Render the template
         page_html = raw_template.render(

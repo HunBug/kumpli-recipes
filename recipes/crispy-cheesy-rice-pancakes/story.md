@@ -31,11 +31,15 @@ These pancakes are a true leftover paradise: almost any cooked rice works, and t
 ![The Fridge Community Wakes](photo-1.png)
 *Nothing moves yet — but the rice has already noticed the door opening.*
 
-![Bottom of morning](photo-2.png)
+### Bottom of morning
+
+![A bowl of rice waiting](photo-2.png)
 
 | 日本語 | Romanisation | English |
 |---|---|---|
 | 音もなく<br>白き粒あり<br>朝の底 | Oto mo naku<br>shiroki tsubu ari<br>asa no soko | Without a sound,<br>white grains are there<br>at the bottom of morning. |
+
+### After Everyone Is Fed
 
 ![After Everyone Is Fed](photo-3.png)
 *Coffee is poured. Forks are set down. The rice has finished its journey.*
