@@ -1,0 +1,230 @@
+{
+  "title": "Crispy Cheesy Rice Pancakes",
+  "slug": "crispy-cheesy-rice-pancakes",
+  "emoji": "🍚🧀",
+  "metadata": {
+    "cuisine": "Fusion - Comfort Food",
+    "type": "Savory pancake",
+    "difficulty": "Easy",
+    "spicy": "None (or adjustable with add-ins)",
+    "serves": "2–3 Kumplis",
+    "good_for": [
+      "leftover rescue",
+      "quick breakfast or brunch",
+      "comfort food",
+      "cooking with kids"
+    ],
+    "seasonality": "anytime",
+    "ingredient_access": "standard-eu",
+    "ingredient_count": "9-15 (depending on add-ins)",
+    "storage": "Cooked pancakes keep in the fridge for up to 2 days; reheat in a pan or toaster",
+    "reheating": "Pan fry over medium heat for 2–3 minutes per side until crispy again",
+    "pairing": "Yogurt dip, sour cream, or any sauce of your choice",
+    "tags": [
+      "leftover-friendly",
+      "quick",
+      "kid-friendly",
+      "pantry-staples",
+      "fried",
+      "cheese",
+      "rice"
+    ]
+  },
+  "timing": {
+    "prep_minutes": 10,
+    "total_minutes": 20
+  },
+  "ingredients": [
+    {
+      "amount": "2 cups",
+      "item": "cooked rice",
+      "notes": "any kind, day-old works best for texture"
+    },
+    {
+      "amount": "1 cup",
+      "item": "shredded cheese",
+      "notes": "cheddar, mozzarella, gouda, or a mix"
+    },
+    {
+      "amount": "1",
+      "item": "egg",
+      "notes": "for binding"
+    },
+    {
+      "amount": "2–3 tbsp",
+      "item": "all-purpose flour or breadcrumbs",
+      "notes": "optional, for extra structure"
+    },
+    {
+      "amount": "2 tbsp",
+      "item": "chopped green onion or chives",
+      "notes": "optional but delightful"
+    },
+    {
+      "amount": "to taste",
+      "item": "salt & pepper",
+      "notes": ""
+    },
+    {
+      "amount": "for frying",
+      "item": "butter or oil",
+      "notes": ""
+    },
+    {
+      "group": "🌶️ Optional Add-ins for Extra Pizzazz",
+      "items": [
+        {
+          "amount": "pinch",
+          "item": "garlic powder or paprika",
+          "notes": ""
+        },
+        {
+          "amount": "1–2 tbsp",
+          "item": "chopped fresh herbs",
+          "notes": "parsley, dill, cilantro, or your favorite"
+        },
+        {
+          "amount": "finely diced",
+          "item": "onion, bell pepper, or jalapeño",
+          "notes": "for flavor, color, or heat"
+        },
+        {
+          "amount": "2–3 tbsp",
+          "item": "leftover cooked vegetables",
+          "notes": "finely chopped"
+        }
+      ]
+    },
+    {
+      "group": "🥣 Garlic Yogurt Herb Dip (cool & tangy)",
+      "items": [
+        {
+          "amount": "½ cup",
+          "item": "plain Greek yogurt or sour cream",
+          "notes": ""
+        },
+        {
+          "amount": "1 clove",
+          "item": "garlic",
+          "notes": "minced or grated"
+        },
+        {
+          "amount": "1 tsp",
+          "item": "lemon juice",
+          "notes": ""
+        },
+        {
+          "amount": "1–2 tbsp",
+          "item": "chopped fresh dill or parsley",
+          "notes": ""
+        },
+        {
+          "amount": "to taste",
+          "item": "salt & pepper",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "group": "🌶️ Spicy Sriracha Mayo (punchy & bold)",
+      "items": [
+        {
+          "amount": "2 tbsp",
+          "item": "mayo",
+          "notes": ""
+        },
+        {
+          "amount": "1 tsp",
+          "item": "sriracha",
+          "notes": "or more to taste"
+        },
+        {
+          "amount": "½ tsp",
+          "item": "lemon juice or vinegar",
+          "notes": ""
+        },
+        {
+          "amount": "pinch",
+          "item": "sugar",
+          "notes": "optional, for balance"
+        }
+      ]
+    },
+    {
+      "group": "🍅 Simple Tomato Relish (bright & fresh)",
+      "items": [
+        {
+          "amount": "1 cup",
+          "item": "cherry tomatoes",
+          "notes": "chopped"
+        },
+        {
+          "amount": "1 tbsp",
+          "item": "balsamic or red wine vinegar",
+          "notes": ""
+        },
+        {
+          "amount": "1 tbsp",
+          "item": "olive oil",
+          "notes": ""
+        },
+        {
+          "amount": "to taste",
+          "item": "salt, pepper, and fresh basil or oregano",
+          "notes": ""
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "step": "In a bowl, combine rice, cheese, egg, flour (or breadcrumbs), green onions, and any spices or add-ins.",
+      "title": "Mix It Up"
+    },
+    {
+      "step": "Mix until it holds together. If it feels too loose, add a bit more flour or breadcrumbs.",
+      "title": "Check Consistency"
+    },
+    {
+      "step": "Scoop about ¼ cup of the mixture and form into a small pancake or patty with your hands. Slightly flatten them—not too thin, or they'll break.",
+      "title": "Form Patties"
+    },
+    {
+      "step": "Heat a skillet over medium heat and add a touch of oil or butter.",
+      "title": "Heat the Pan"
+    },
+    {
+      "step": "Cook each patty for about 3–4 minutes per side until golden brown and crispy.",
+      "title": "Pan-Fry to Perfection"
+    },
+    {
+      "step": "Place on a paper towel briefly to remove excess oil, then serve hot!",
+      "title": "Drain & Serve"
+    },
+    {
+      "group": "🥣 Garlic Yogurt Herb Dip",
+      "steps": [
+        {
+          "step": "Mix yogurt, minced garlic, lemon juice, chopped herbs, salt, and pepper. Let sit for 10 minutes so flavors mingle. Perfect contrast to the warm, melty pancake."
+        }
+      ]
+    },
+    {
+      "group": "🌶️ Spicy Sriracha Mayo",
+      "steps": [
+        {
+          "step": "Stir together mayo, sriracha, lemon juice, and optional pinch of sugar. Great if your pancakes have a touch of heat or smoky cheese."
+        }
+      ]
+    },
+    {
+      "group": "🍅 Simple Tomato Relish",
+      "steps": [
+        {
+          "step": "Combine chopped cherry tomatoes, vinegar, olive oil, salt, pepper, and fresh herbs. A quick-fix zingy and vibrant dip."
+        }
+      ]
+    }
+  ],
+  "notes": "These pancakes are a beautiful alchemy of leftovers! Use day-old rice for the best texture—fresh rice can get too mushy. Don't skip the frying step; the crispy exterior is what makes them special. Serve with any dipping sauce you love: yogurt dips, sour cream, sriracha mayo, or a fresh tomato relish."
+}

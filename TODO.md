@@ -7,6 +7,8 @@ Hianyzo fenykepek es illusztraciokat kikeresni es hozzaadni.
 
 mac n cheese receptet is kene hozzaadni.
 
+Skot halas, hagymas tejszines levest hozzaadni.
+
 A regi kumplireceptes naptarat is el kellene kesziteni.
 
 some light background color,image, pattern for the recipe cards
